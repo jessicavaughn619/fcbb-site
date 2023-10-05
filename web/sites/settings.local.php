@@ -40,6 +40,8 @@ assert_options(ASSERT_EXCEPTION, TRUE);
  */
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 
+$settings['twig_cache'] = FALSE;
+
 /**
  * Show all error messages, with backtrace information.
  *

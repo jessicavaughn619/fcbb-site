@@ -1,0 +1,21 @@
+{
+  "name": "fcbb_theme",
+  "version": "1.0.0",
+  "description": "Drupal 10 theme for FCBB site",
+  "main": "gulpfile.js",
+  "scripts": {
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+  },
+  "author": "Jessica Vaughn | Steve Vaughn",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sass-glob": "^1.1.0",
+    "sass": "^1.68.0"
+  }
+}

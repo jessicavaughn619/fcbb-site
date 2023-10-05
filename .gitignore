@@ -40,3 +40,6 @@ web/sites/simpletest
 
 # Ignore multi-site test environment.
 # simpletest
+
+node_modules
+package-lock.json
