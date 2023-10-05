@@ -1,0 +1,21 @@
+name: FCBB Theme
+type: theme
+description: 'Theme for Fountain City Brass Band'
+package: Custom
+version: VERSION
+core_version_requirement: ^10
+base theme: starterkit_theme
+libraries:
+  - fcbb_theme/global-styling
+  - fcbb_theme/global-scripts
+
+regions:
+  header: 'Header region'
+  sticky_header: 'Sticky Header region'
+  highlighted: 'Highlighted content region'
+  help: 'Dynamic help text, mostly for admin pages.'
+  section_top: 'Content above main'
+  content: 'The main content of the current page.'
+  section_bottom: 'Content below main'
+  sticky_footer: 'Sticky Footer region'
+  footer: 'Footer region'

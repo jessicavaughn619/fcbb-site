@@ -1,0 +1,48 @@
+{% if page.header %}
+  {{ page.header }}
+{% endif %}
+{% if page.sticky_header %}
+<section id="sticky-header" class="sticky-header pos--sticky">
+  {{ page.sticky_header }}
+</section>
+{% endif %}
+{% if page.highlighted %}
+<section id="highlighted" class="bg--theme-color">
+  {{ page.highlighted }}
+</section>
+{% endif %}
+{% if page.help %}
+<section id="help" class="body--max-width">
+  <div class="container">{{ page.help }}</div>
+</section>
+{% endif %}
+{% if page.section_top %}
+<section id="section-top">
+  {{ page.section_top }}
+</section>
+{% endif %}
+<main id="content" role="main">
+  {# {{'title'|currentnode}} #}
+  {% if error_code %}
+    <div>
+      <div class="eyebrow">{{ 'Error'|t }} {{ error_code }}</div>
+      <div class="heading-b">{{ error_title }}</div>
+      <div class="intro">{{ error_desc }}</div>
+    </div>
+  {% else %}
+    {{ page.content }}
+  {% endif %}
+</main>
+{% if page.section_bottom %}
+<section id="section-bottom">
+  {{ page.section_bottom }}
+</section>
+{% endif %}
+{% if page.sticky_footer %}
+<section id="sticky-footer" class="sticky-footer pos--sticky">
+  {{ page.sticky_footer }}
+</section>
+{% endif %}
+{% if page.footer %}
+  {{ page.footer }}
+{% endif %}

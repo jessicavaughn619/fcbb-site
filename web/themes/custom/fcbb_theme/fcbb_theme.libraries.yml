@@ -1,0 +1,10 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      stylesheets/style.css: {}
+global-scripts:
+  version: VERSION
+  js:
+    js/site.min.js: { minified: true}
+  
