@@ -7,4 +7,14 @@ global-scripts:
   version: VERSION
   js:
     js/site.min.js: { minified: true}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+landing-page:
+  version: VERSION
+  css:
+    theme:
+      css/landing-page.css: {}
+  js:
+    js/node/landing-page.min.js: {}
   

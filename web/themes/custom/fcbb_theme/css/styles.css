@@ -1,6 +1,5 @@
 body {
-  background-color: yellow;
-  color: white;
+  color: red;
 }
 body > p {
   display: block;

@@ -3,11 +3,11 @@ const { series, parallel } = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass        = require('gulp-sass')(require('sass'));
 const prefix      = require('gulp-autoprefixer');
-const concat      = require('gulp-concat');
-const babel       = require('gulp-babel');
 const cp          = require('child_process');
 const sassGlob    = require('gulp-sass-glob');
 const { reload } = require('browser-sync');
+const webpack     = require('webpack-stream');
+const cfg         = require('./webpack.config');
 
 const paths = {
   styles: {
@@ -47,12 +47,9 @@ function sassTask() {
  * Compile files from js
  */
 function scriptsTask() {
-  return gulp.src(['_js/*.js', '_js/custom.js'])
-    .pipe(babel({
-      presets: ['@babel/preset-env']
-    }))
-    .pipe(concat('scripts.js'))
-    .pipe(gulp.dest('js'))
+  return gulp.src(paths.scripts.src)
+    .pipe(webpack(cfg))
+    .pipe(gulp.dest(paths.scripts.dest))
     .pipe(browserSync.stream());
 }
 
@@ -78,7 +75,7 @@ function reloadTask(done) {
  */
 function watchTask() {
   gulp.watch(paths.styles.src, series(sassTask));
-  gulp.watch(['_js/*.js'], scriptsTask);
+  gulp.watch(paths.scripts.src, scriptsTask);
   gulp.watch(['templates/*.html.twig', '**/*.yml'], gulp.series(clearcacheTask, reloadTask));
 }
 
@@ -86,4 +83,14 @@ function watchTask() {
  * Default task, running just `gulp` will 
  * compile Sass files, launch BrowserSync, watch files.
  */
-exports.default = gulp.series(browserSyncTask, watchTask);
+exports.default = series(
+  sassTask,
+  scriptsTask
+  );
+
+exports.build = series(
+  sassTask,
+  scriptsTask
+);
+
+exports.watch = parallel(browserSyncTask, watchTask);
