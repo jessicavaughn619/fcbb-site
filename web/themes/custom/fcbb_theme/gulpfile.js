@@ -74,15 +74,12 @@ function reloadTask(done) {
  * Clear cache when Drupal related files are changed
  */
 function watchTask() {
-  gulp.watch(paths.styles.src, series(sassTask));
+  gulp.watch(paths.styles.src, sassTask);
   gulp.watch(paths.scripts.src, scriptsTask);
   gulp.watch(['templates/*.html.twig', '**/*.yml'], gulp.series(clearcacheTask, reloadTask));
 }
 
-/**
- * Default task, running just `gulp` will 
- * compile Sass files, launch BrowserSync, watch files.
- */
+
 exports.default = series(
   sassTask,
   scriptsTask

@@ -1,6 +1,4 @@
 body {
-  color: red;
-}
-body > p {
-  display: block;
+  color: black;
+  padding: 1rem;
 }

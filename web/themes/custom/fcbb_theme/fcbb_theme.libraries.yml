@@ -17,4 +17,9 @@ landing-page:
       css/landing-page.css: {}
   js:
     js/node/landing-page.min.js: {}
+basic-page:
+  version: VERSION
+  css:
+    theme:
+      css/basic-page.css: {}
   
