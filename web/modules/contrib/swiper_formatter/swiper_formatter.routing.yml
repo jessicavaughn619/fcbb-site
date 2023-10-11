@@ -1,0 +1,31 @@
+entity.swiper_formatter.collection:
+  path: '/admin/config/content/swiper-formatter'
+  defaults:
+    _entity_list: 'swiper_formatter'
+    _title: 'Swiper templates'
+  requirements:
+    _permission: 'administer swiper_formatter'
+
+entity.swiper_formatter.add_form:
+  path: '/admin/config/content/swiper_formatter/add'
+  defaults:
+    _entity_form: 'swiper_formatter.add'
+    _title: 'Add Swiper'
+  requirements:
+    _permission: 'administer swiper_formatter'
+
+entity.swiper_formatter.edit_form:
+  path: '/admin/config/content/swiper-formatter/{swiper_formatter}'
+  defaults:
+    _entity_form: 'swiper_formatter.edit'
+    _title: 'Edit Swiper template'
+  requirements:
+    _permission: 'administer swiper_formatter'
+
+entity.swiper_formatter.delete_form:
+  path: '/admin/config/content/swiper-formatter/{swiper_formatter}/delete'
+  defaults:
+    _entity_form: 'swiper_formatter.delete'
+    _title: 'Delete Swiper'
+  requirements:
+    _permission: 'administer swiper_formatter'

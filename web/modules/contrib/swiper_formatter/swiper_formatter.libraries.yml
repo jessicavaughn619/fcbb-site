@@ -1,0 +1,41 @@
+remote:
+  remote: https://swiperjs.com
+  version: VERSION
+  license:
+    name: MIT
+    url: https://github.com/nolimits4web/swiper/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    //unpkg.com/swiper@8/swiper-bundle.min.js: { type: external, minified: true }
+  css:
+    component: 
+      //unpkg.com/swiper@8/swiper-bundle.min.css: { type: external, minified: true }  
+
+local:
+  version: VERSION
+  js:
+    /libraries/swiper/swiper-bundle.js: {}
+  css:
+    component:
+      /libraries/swiper/swiper-bundle.css: {}
+
+local_minified:
+  version: VERSION
+  js:
+    /libraries/swiper/swiper-bundle.min.js: { minified: true }
+  css:
+    component:
+      /libraries/swiper/swiper-bundle.min.css: { minified: true }
+      
+swiper_formatter:
+  version: VERSION
+  js:
+    js/swiper_formatter.js: {}
+  css:
+    theme: 
+      css/swiper_formatter.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+    - core/drupalSettings
