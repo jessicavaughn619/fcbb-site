@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the Swiper formatter module.
+ */
+
+use Drupal\swiper_formatter\Entity\SwiperFormatter;
+
+/**
+ * Implements hook_requirements().
+ */
+function swiper_formatter_requirements($phase) {
+  if ($phase != 'runtime') {
+    return [];
+  }
+
+  // Collect all available swiper entities.
+  $swipers = SwiperFormatter::getSwipers();
+
+  if (empty($swipers)) {
+    return [];
+  }
+
+  $requirements = [];
+  $has_local = FALSE;
+  foreach ($swipers as $swiper_id => $swiper_data) {
+    if (isset($swiper_data['properties']) && isset($swiper_data['properties']['swiper_options'])) {
+      if (strpos($swiper_data['properties']['swiper_options']['source'], 'local') !== FALSE) {
+
+        $has_local = TRUE;
+        $js_library_type = $swiper_data['properties']['swiper_options']['source'] == 'local' ? 'swiper-bundle.js' : 'swiper-bundle.min.js';
+        $css_library_type = $swiper_data['properties']['swiper_options']['source'] == 'local' ? 'swiper-bundle.css' : 'swiper-bundle.min.css';
+
+        $js_path = '/libraries/swiper/' . $js_library_type;
+        $css_path = '/libraries/swiper/' . $css_library_type;
+
+        if (!file_exists(DRUPAL_ROOT . $js_path) || !file_exists(DRUPAL_ROOT . $css_path)) {
+          $requirements['swiper_formatter_' . $swiper_id] = [];
+          $requirements['swiper_formatter_' . $swiper_id]['title'] = t('Missing <em>@swiper swiper</em> library source', ['@swiper' => $swiper_data['label']]);
+          $requirements['swiper_formatter_' . $swiper_id]['description'] = t('<p>Swiper @swiper is having "Swiper library source" set to <strong>@local</strong> but no files are present in <strong>/libraries/swiper/</strong>. Either change settings to <strong>Remote</strong> for this entity, or make sure to download <a target="_blank" href=":js_url">@js_name</a>  and css files and place those in the folder and <a target="_blank" href=":css_url">@css_name</a>.</p>', [
+            '@swiper' => $swiper_data['label'],
+            '@local' => ucfirst(str_replace('_', ' ', $swiper_data['properties']['swiper_options']['source'])),
+            '@js_name' => $js_library_type,
+            ':js_url' => 'https://unpkg.com/swiper@8/' . $js_library_type,
+            '@css_name' => $css_library_type,
+            ':css_url' => 'https://unpkg.com/swiper@8/' . $css_library_type,
+          ]);
+          $requirements['swiper_formatter_' . $swiper_id]['severity'] = REQUIREMENT_ERROR;
+        }
+      }
+    }
+  }
+
+  if (empty($requirements)) {
+    $requirements['swiper_formatter'] = [];
+    $requirements['swiper_formatter']['title'] = t('Swiper.js library source');
+    $requirements['swiper_formatter']['description'] = $has_local ? t('Installed in <em>/libraries/swiper</em> folder.') : t('Set to remote cdn <em>//unpkg.com/swiper@8/</em> see <em>swiper_formatter.libraries.yml</em>.');
+    $requirements['swiper_formatter']['severity'] = REQUIREMENT_OK;
+  }
+  return $requirements;
+}

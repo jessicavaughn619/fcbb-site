@@ -1,0 +1,148 @@
+swiper_formatter.swiper_formatter.*:
+  type: config_entity
+  label: Add Swiper template
+  mapping:
+    id:
+      type: string
+      label: ID
+    label:
+      type: label
+      label: Label
+    uuid:
+      type: string
+      label: Unique uuid
+    description:
+      type: string
+      label: Description
+    enabled:
+      type: boolean
+      label: Enabled or Disabled
+    source:
+      type: string
+      label: Swiper library source
+    swiper_options:
+      type: mapping
+      mapping: 
+        wrapper:
+          autoHeight:
+            type: boolean
+            label: Auto height
+          width:
+            type: integer
+            label: Fixed width
+          height:
+            type: integer
+            label: Fixed height
+          observer:
+            type: boolean
+            label: Mutation Observer on Swiper and its elements
+        slides:
+          type: mapping
+          label:
+          mapping:
+            direction:
+              type: string
+              label: Swiping direction
+            effect:
+              type: string
+              label: Swiper transition effect
+            loop:
+              type: boolean
+              label: Continuous loop mode
+            rewind:
+              type: boolean
+              label: Rewind when click on first or last nav button
+            centeredSlides:
+              type: boolean
+              label: Center active slide
+            speed:
+              type: integer
+              label: Duration in ms of transition between slides
+            slidesPerView:
+              type: integer
+              label: Number of slides per view
+            loopedSlides:
+              type: integer
+              label: Number of slides looped at once
+            noSwipingSelector:
+              type: string
+              label: Exclude selectors, no swipe
+            grabCursor:
+              type: boolean
+              label: Set grab cursor over slide
+            cssMode:
+              type: boolean
+              label: Use modern CSS Scroll Snap API
+        autoplay:
+          type: mapping
+          label: Autoplay settings
+          mapping:
+            enabled:
+              type: boolean
+              label: Enable/disable autoplay
+            delay:
+              type: integer
+              label: Autoplay delay in milliseconds
+            disableOnInteraction:
+              type: boolean
+              label: Enable/disable autoplay on user interaction
+            pauseOnMouseEnter:
+              type: boolean
+              label: Pause autoplay on mouse enter
+            reverseDirection:
+              type: boolean
+              label: Enables autoplay in reverse direction
+            stopOnLastSlide:
+              type: boolean
+              label: Stop autoplay when last slide is reached
+            waitForTransition:
+              type: boolean
+              label: Waits for transition to continue autoplay
+        navigation:
+          type: mapping
+          label: Navigation settings
+          mapping: 
+            enabled:
+              type: boolean
+              label: Enable/disable navigation
+            hideOnClick: 
+              type: boolean
+              label: Toggle visibility after click on Swiper container
+        pagination:
+          type: mapping
+          label: Pagination settings
+          mapping: 
+            enabled:
+              type: boolean
+              label: Enable/disable pagination
+            type:
+              type: string
+              label: Paginatin type
+            dynamicBullets:
+              type: boolean
+              label: Dynamic pagination bullets
+            clickable:
+              type: boolean
+              label: Bullets clickable
+        lazy:
+          type: mapping
+          label: Navigation settings
+          mapping: 
+            enabled:
+              type: boolean
+              label: Enable/disable lazy load
+            checkInView:
+              type: boolean
+              label: Check for Swiper to be in view before lazy loading images
+            loadOnTransitionStart:
+              type: boolean
+              label: Start loading of new image in the beginning of transition
+            loadPrevNext:
+              type: boolean
+              label: Enable lazy loading for the closest prev and next slides images
+            loadPrevNextAmount:
+              type: integer
+              label: Amount of next and prev slides to preload lazy images in
+            scrollingElement:
+              type: string
+              label: CSS selector for element to check scrolling on for checkInView              
