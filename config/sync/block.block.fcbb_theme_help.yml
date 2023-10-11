@@ -1,4 +1,4 @@
-uuid: f815b87b-4b87-4207-9f37-b2af9dd198dd
+uuid: f94a91c2-5645-4d04-af47-af78698fcc08
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: fcbb_theme_help
 theme: fcbb_theme
 region: header
-weight: 0
+weight: -2
 provider: null
 plugin: help_block
 settings:

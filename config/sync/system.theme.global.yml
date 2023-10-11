@@ -14,3 +14,11 @@ logo:
   path: ''
   url: ''
   use_default: true
+third_party_settings:
+  browsersync:
+    enabled: null
+    host: ''
+    port: ''
+browsersync_enabled: 0
+browsersync_host: ''
+browsersync_port: ''

@@ -1,4 +1,4 @@
-uuid: d0742a09-bfb4-489d-a0bb-7881eae2b5e5
+uuid: 65cb3273-90f5-40a7-a8b9-f31e3d84f463
 langcode: en
 status: true
 dependencies:
@@ -24,4 +24,8 @@ settings:
   level: 1
   depth: 1
   expand_all_items: false
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: ''

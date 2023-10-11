@@ -1,4 +1,4 @@
-uuid: 58c1fd97-3bed-46b6-b39a-a231d4a7ae4d
+uuid: 7c97d6a0-660c-425e-811f-22274c95706d
 langcode: en
 status: true
 dependencies:
@@ -10,8 +10,8 @@ _core:
   default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
 id: fcbb_theme_site_branding
 theme: fcbb_theme
-region: header
-weight: 0
+region: footer
+weight: -7
 provider: null
 plugin: system_branding_block
 settings:

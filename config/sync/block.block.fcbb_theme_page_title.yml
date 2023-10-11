@@ -1,4 +1,4 @@
-uuid: 52c3b1e3-8e8d-43e7-b905-4174ebb4ea85
+uuid: 91d5f17a-5298-4001-a5bc-0436552ad488
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ _core:
 id: fcbb_theme_page_title
 theme: fcbb_theme
 region: header
-weight: -5
+weight: -7
 provider: null
 plugin: page_title_block
 settings:
