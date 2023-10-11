@@ -1,0 +1,17 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+browsersync_enabled: 1
+browsersync_host: fcbb-site.ddev.site
+browsersync_port: '3000'
+third_party_settings:
+  browsersync:
+    enabled: '1'
+    host: fcbb-site.ddev.site
+    port: '3000'

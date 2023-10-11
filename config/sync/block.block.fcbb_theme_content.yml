@@ -1,0 +1,22 @@
+uuid: e171f476-2c94-441a-ae90-11995112a2af
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - fcbb_theme
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: fcbb_theme_content
+theme: fcbb_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

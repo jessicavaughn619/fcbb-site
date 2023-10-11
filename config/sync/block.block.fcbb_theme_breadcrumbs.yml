@@ -1,0 +1,22 @@
+uuid: aea20502-156d-4077-9023-cc46b1d9e5d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - fcbb_theme
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: fcbb_theme_breadcrumbs
+theme: fcbb_theme
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }
