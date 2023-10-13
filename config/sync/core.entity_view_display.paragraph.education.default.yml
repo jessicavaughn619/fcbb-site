@@ -1,0 +1,24 @@
+uuid: f6d6a0d1-629e-4bdd-bf85-3bee6597e16d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.education.field_education_degrees
+    - paragraphs.paragraphs_type.education
+  module:
+    - entity_reference_revisions
+id: paragraph.education.default
+targetEntityType: paragraph
+bundle: education
+mode: default
+content:
+  field_education_degrees:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

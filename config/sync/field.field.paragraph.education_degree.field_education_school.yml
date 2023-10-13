@@ -1,0 +1,19 @@
+uuid: 04343189-7786-4bfe-ab70-a2e8d4b2112f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_education_school
+    - paragraphs.paragraphs_type.education_degree
+id: paragraph.education_degree.field_education_school
+field_name: field_education_school
+entity_type: paragraph
+bundle: education_degree
+label: School
+description: "Please do not abbreviate.\r\nEx. University of Colorado Boulder"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

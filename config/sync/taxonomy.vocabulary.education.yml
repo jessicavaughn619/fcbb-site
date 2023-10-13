@@ -1,8 +1,0 @@
-uuid: 56f88c3a-0c6d-4243-a86b-576cfcf96aca
-langcode: en
-status: true
-dependencies: {  }
-name: Education
-vid: education
-description: 'Professional degrees'
-weight: 0

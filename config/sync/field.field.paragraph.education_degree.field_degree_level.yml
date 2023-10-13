@@ -1,0 +1,21 @@
+uuid: 9eecb789-8ca3-453f-95d2-9861b7a0c289
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_degree_level
+    - paragraphs.paragraphs_type.education_degree
+  module:
+    - options
+id: paragraph.education_degree.field_degree_level
+field_name: field_degree_level
+entity_type: paragraph
+bundle: education_degree
+label: 'Degree Level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

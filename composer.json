@@ -26,6 +26,7 @@
         "drupal/field_group": "^3.4",
         "drupal/focal_point": "^2.0",
         "drupal/link_attributes": "^2.1",
+        "drupal/paragraphs": "^1.16",
         "drupal/swiper_formatter": "^1.0",
         "drupal/twig_field_value": "^2.0",
         "drupal/twig_tweak": "^3.2",

@@ -1,0 +1,48 @@
+uuid: 24423688-410c-49db-b330-a25fce91443a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.education_degree.field_degree_level
+    - field.field.paragraph.education_degree.field_degree_title
+    - field.field.paragraph.education_degree.field_education_school
+    - field.field.paragraph.education_degree.field_school_location
+    - paragraphs.paragraphs_type.education_degree
+  module:
+    - address
+id: paragraph.education_degree.default
+targetEntityType: paragraph
+bundle: education_degree
+mode: default
+content:
+  field_degree_level:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_degree_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_education_school:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_school_location:
+    type: address_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

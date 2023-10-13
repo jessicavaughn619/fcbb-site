@@ -1,11 +1,13 @@
-uuid: 6115be5a-7900-409d-927b-2fab1fc32342
+uuid: 3527b3b5-329f-4b71-b9e2-1410108b0ae8
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_member_education
     - node.type.member
-    - taxonomy.vocabulary.education
+    - paragraphs.paragraphs_type.education
+  module:
+    - entity_reference_revisions
 id: node.member.field_member_education
 field_name: field_member_education
 entity_type: node
@@ -17,13 +19,16 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:paragraph'
   handler_settings:
     target_bundles:
       education: education
-    sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
-field_type: entity_reference
+    negate: 0
+    target_bundles_drag_drop:
+      education:
+        weight: 3
+        enabled: true
+      education_degree:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions
