@@ -1,0 +1,44 @@
+uuid: 9e7eb43f-166c-4d68-b2e4-f65290dcec00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_member_location
+    - node.type.member
+  module:
+    - address
+id: node.member.field_member_location
+field_name: field_member_location
+entity_type: node
+bundle: member
+label: Location
+description: 'Enter City/State/Zip/Country'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries:
+    CA: CA
+    GB: GB
+    US: US
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    organization:
+      override: hidden
+    addressLine1:
+      override: hidden
+    addressLine2:
+      override: hidden
+    sortingCode:
+      override: hidden
+    dependentLocality:
+      override: hidden
+  fields: {  }
+field_type: address

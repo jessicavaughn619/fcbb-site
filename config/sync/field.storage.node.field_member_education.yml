@@ -1,0 +1,20 @@
+uuid: 7fa8ca10-531c-4c43-af72-f7d252d680e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_member_education
+field_name: field_member_education
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

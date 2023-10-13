@@ -1,0 +1,21 @@
+uuid: a052bb9c-890d-405a-bf27-5c2b65388103
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_member_section
+    - node.type.member
+  module:
+    - options
+id: node.member.field_member_section
+field_name: field_member_section
+entity_type: node
+bundle: member
+label: Section
+description: 'Select the section the personnel belongs to.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

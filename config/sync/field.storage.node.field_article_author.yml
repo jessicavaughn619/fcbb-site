@@ -1,0 +1,19 @@
+uuid: 359bf1a5-7e91-4a64-a6b7-ce22c0effa7c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_article_author
+field_name: field_article_author
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -16,6 +16,7 @@
     ],
     "require": {
         "composer/installers": "^2.0",
+        "drupal/address": "^1.12",
         "drupal/admin_toolbar": "^3.4",
         "drupal/browsersync": "^3.0@beta",
         "drupal/core-composer-scaffold": "^10.1",

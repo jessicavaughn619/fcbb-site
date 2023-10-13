@@ -1,0 +1,29 @@
+uuid: 6115be5a-7900-409d-927b-2fab1fc32342
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_member_education
+    - node.type.member
+    - taxonomy.vocabulary.education
+id: node.member.field_member_education
+field_name: field_member_education
+entity_type: node
+bundle: member
+label: Education
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      education: education
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

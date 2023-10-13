@@ -1,0 +1,21 @@
+uuid: b981d4b8-26c3-4757-82dc-fb1cc2d5028e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_member_role
+    - node.type.member
+  module:
+    - options
+id: node.member.field_member_role
+field_name: field_member_role
+entity_type: node
+bundle: member
+label: Role
+description: 'Select all roles for member.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

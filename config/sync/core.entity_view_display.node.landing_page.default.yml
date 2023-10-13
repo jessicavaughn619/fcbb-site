@@ -5,6 +5,9 @@ dependencies:
   config:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_landing_display_title
+    - field.field.node.landing_page.field_landing_hero_image
+    - field.field.node.landing_page.field_landing_hero_video
+    - field.field.node.landing_page.field_landing_intro
     - node.type.landing_page
   module:
     - text
@@ -28,6 +31,31 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_landing_hero_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_landing_hero_video:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_landing_intro:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
     region: content
   links:
     settings: {  }

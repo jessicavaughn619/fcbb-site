@@ -1,0 +1,19 @@
+uuid: 4feb774f-4775-40b4-89e8-fe313a9ea783
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_education_school_name
+    - taxonomy.vocabulary.education
+id: taxonomy_term.education.field_education_school_name
+field_name: field_education_school_name
+entity_type: taxonomy_term
+bundle: education
+label: 'School Name'
+description: "Ex. University of Colorado Boulder\r\nEx. Royal Northern College of Music"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,26 @@
+uuid: 0c782064-85fb-480a-9ba3-8ba88d609c62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_director_bio
+    - filter.format.full_html
+    - node.type.member
+  module:
+    - text
+id: node.member.field_director_bio
+field_name: field_director_bio
+entity_type: node
+bundle: member
+label: 'Director Bio'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - full_html
+field_type: text_with_summary

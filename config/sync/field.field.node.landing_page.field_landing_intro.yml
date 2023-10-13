@@ -1,0 +1,26 @@
+uuid: 2e87f2c2-bdc0-4c33-94c1-c75f267881e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_landing_intro
+    - filter.format.full_html
+    - node.type.landing_page
+  module:
+    - text
+id: node.landing_page.field_landing_intro
+field_name: field_landing_intro
+entity_type: node
+bundle: landing_page
+label: Intro
+description: 'Introductory about text for landing page'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - full_html
+field_type: text_with_summary

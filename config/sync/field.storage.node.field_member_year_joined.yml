@@ -1,0 +1,20 @@
+uuid: 76c38b68-19c7-45e7-a700-a39724f6615f
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_member_year_joined
+field_name: field_member_year_joined
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

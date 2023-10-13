@@ -1,0 +1,29 @@
+uuid: c674a381-b7a9-415b-a829-eb040bb39f96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_landing_hero_video
+    - media.type.video
+    - node.type.landing_page
+id: node.landing_page.field_landing_hero_video
+field_name: field_landing_hero_video
+entity_type: node
+bundle: landing_page
+label: 'Hero Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

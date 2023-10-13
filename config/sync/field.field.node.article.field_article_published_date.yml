@@ -1,0 +1,21 @@
+uuid: 19dbd784-5d85-43e0-b36f-e37da852645b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_published_date
+    - node.type.article
+  module:
+    - datetime
+id: node.article.field_article_published_date
+field_name: field_article_published_date
+entity_type: node
+bundle: article
+label: 'Published Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

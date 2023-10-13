@@ -1,0 +1,26 @@
+uuid: 5a47d062-1167-49b0-bf8d-2f06b1eb0655
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_details
+    - filter.format.full_html
+    - node.type.event
+  module:
+    - text
+id: node.event.field_event_details
+field_name: field_event_details
+entity_type: node
+bundle: event
+label: Details
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - full_html
+field_type: text_with_summary

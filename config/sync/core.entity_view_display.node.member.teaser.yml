@@ -1,0 +1,50 @@
+uuid: 1dc49368-f977-4502-af4a-61632f692c7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.member.field_additional_ensembles
+    - field.field.node.member.field_director_bio
+    - field.field.node.member.field_director_headshot
+    - field.field.node.member.field_director_position_title
+    - field.field.node.member.field_member_education
+    - field.field.node.member.field_member_first_name
+    - field.field.node.member.field_member_last_name
+    - field.field.node.member.field_member_location
+    - field.field.node.member.field_member_performer_headshot
+    - field.field.node.member.field_member_role
+    - field.field.node.member.field_member_section
+    - field.field.node.member.field_member_year_joined
+    - field.field.node.member.field_performer_bio
+    - field.field.node.member.field_performer_position_title
+    - field.field.node.member.field_teaching_positions
+    - node.type.member
+  module:
+    - user
+id: node.member.teaser
+targetEntityType: node
+bundle: member
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_additional_ensembles: true
+  field_director_bio: true
+  field_director_headshot: true
+  field_director_position_title: true
+  field_member_education: true
+  field_member_first_name: true
+  field_member_last_name: true
+  field_member_location: true
+  field_member_performer_headshot: true
+  field_member_role: true
+  field_member_section: true
+  field_member_year_joined: true
+  field_performer_bio: true
+  field_performer_position_title: true
+  field_teaching_positions: true

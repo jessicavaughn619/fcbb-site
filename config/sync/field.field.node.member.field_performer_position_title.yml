@@ -1,0 +1,19 @@
+uuid: 8002ec79-3ebc-4fe7-b7b6-22c6fc0192d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_performer_position_title
+    - node.type.member
+id: node.member.field_performer_position_title
+field_name: field_performer_position_title
+entity_type: node
+bundle: member
+label: 'Performer Position Title'
+description: 'Example: Solo Euphonium, 2nd Horn, Solo Cornet, etc.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 9a8169ba-cc56-41cd-8685-efbf373e6fe1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_member_year_joined
+    - node.type.member
+  module:
+    - datetime
+id: node.member.field_member_year_joined
+field_name: field_member_year_joined
+entity_type: node
+bundle: member
+label: 'Year Joined'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
