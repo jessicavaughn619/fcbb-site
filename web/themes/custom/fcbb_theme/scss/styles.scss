@@ -1,4 +1,9 @@
-body {
-    color: black;
-    padding: 1rem;
-}
+@use 'sass:math';
+
+@import '00-globals/all'; // global variables
+@import '01-functions/all'; // global functions
+@import '02-mixins/all'; // global mixins
+@import '03-base/all'; // base styles and global elements
+@import '04-core-components/all'; // basic components
+@import '05-nodes/all'; // styles required for specific content types
+@import '06-paragraphs/all'; // styles requried for paragraph components

@@ -1,4 +1,3 @@
-body {
-  color: black;
-  padding: 1rem;
+.node--landing {
+  background-color: red;
 }

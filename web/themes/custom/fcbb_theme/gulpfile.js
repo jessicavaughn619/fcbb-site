@@ -3,6 +3,8 @@ const { series, parallel } = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass        = require('gulp-sass')(require('sass'));
 const prefix      = require('gulp-autoprefixer');
+const rename      = require('gulp-rename');
+const cleanCSS    = require('gulp-clean-css');
 const cp          = require('child_process');
 const sassGlob    = require('gulp-sass-glob');
 const { reload } = require('browser-sync');
@@ -53,6 +55,18 @@ function scriptsTask() {
     .pipe(browserSync.stream());
 }
 
+function minifyCss() {
+  return gulp
+    .src(['css/**/*.css', '!css/*.min.css', '!css/**/*.min.css'])
+    .pipe(
+      rename({
+        suffix: '.min',
+      }),
+    )
+    .pipe(cleanCSS({ specialComments: 0 }))
+    .pipe(gulp.dest('css'));
+}
+
 /**
  * Clear all caches
  */
@@ -74,7 +88,7 @@ function reloadTask(done) {
  * Clear cache when Drupal related files are changed
  */
 function watchTask() {
-  gulp.watch(paths.styles.src, sassTask);
+  gulp.watch(paths.styles.src, series(sassTask, minifyCss));
   gulp.watch(paths.scripts.src, scriptsTask);
   gulp.watch(['templates/*.html.twig', '**/*.yml'], gulp.series(clearcacheTask, reloadTask));
 }
@@ -82,12 +96,14 @@ function watchTask() {
 
 exports.default = series(
   sassTask,
+  minifyCss,
   scriptsTask
   );
 
 exports.build = series(
   sassTask,
+  minifyCss,
   scriptsTask
 );
 
-exports.watch = parallel(browserSyncTask, watchTask);
+exports.watch = parallel(watchTask, browserSyncTask);
