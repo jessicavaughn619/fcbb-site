@@ -1,0 +1,21 @@
+<?php
+
+use Drupal\Component\Utility\Html;
+
+function fcbb_theme_preprocess_html(&$variables) {
+    $variables['attributes']['class'][] = \Drupal::service('path.matcher')
+        ->isFrontPage() ? 'frontpage' : 'not-front';
+}
+
+function fcbb_theme_preprocess_node(&$variables) {
+    $node = $variables['node'];
+    $current_node_type = $node->bundle();
+    $variables['view_mode'] = $variables['elements']['#view_mode'];
+    $variables['node'] = $variables['elements']['#node'];
+    $variables['nid'] = $node->id();
+
+    $variables['attributes']['class'][] = 'node';
+    $variables['attributes']['class'][] = 'node-' . Html::cleanCssIdentifier($node->bundle());
+    $variables['attributes']['class'][] = Html::cleanCssIdentifier($variables['view_mode']);
+    $variables['attributes']['data-node-id'] = $node->id();
+}
