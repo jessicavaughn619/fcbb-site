@@ -21,10 +21,10 @@ dependencies:
     - node.type.member
   module:
     - address
-    - datetime
     - options
     - text
     - user
+    - yearonly
 id: node.member.default
 targetEntityType: node
 bundle: member
@@ -118,13 +118,11 @@ content:
     weight: 109
     region: content
   field_member_year_joined:
-    type: datetime_custom
+    type: yearonly_default
     label: hidden
-    settings:
-      timezone_override: ''
-      date_format: 'Y'
+    settings: {  }
     third_party_settings: {  }
-    weight: 110
+    weight: 119
     region: content
   field_performer_bio:
     type: text_default

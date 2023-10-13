@@ -1,4 +1,4 @@
-uuid: 9a8169ba-cc56-41cd-8685-efbf373e6fe1
+uuid: 68c511c9-2cc1-4588-aa09-607a2b2315fc
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_member_year_joined
     - node.type.member
   module:
-    - datetime
+    - yearonly
 id: node.member.field_member_year_joined
 field_name: field_member_year_joined
 entity_type: node
@@ -17,5 +17,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: datetime
+settings:
+  yearonly_from: '2002'
+  yearonly_to: now
+field_type: yearonly

@@ -21,11 +21,11 @@ dependencies:
     - node.type.member
   module:
     - address
-    - datetime
     - field_group
     - media_library
     - path
     - text
+    - yearonly
 third_party_settings:
   field_group:
     group_performer_details:
@@ -93,7 +93,7 @@ content:
     third_party_settings: {  }
   field_director_headshot:
     type: media_library_widget
-    weight: 14
+    weight: 13
     region: content
     settings:
       media_types: {  }
@@ -107,10 +107,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_member_education:
-    type: options_select
+    type: entity_reference_autocomplete
     weight: 7
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_member_first_name:
     type: string_textfield
@@ -136,7 +140,7 @@ content:
     third_party_settings: {  }
   field_member_performer_headshot:
     type: media_library_widget
-    weight: 11
+    weight: 15
     region: content
     settings:
       media_types: {  }
@@ -154,14 +158,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_member_year_joined:
-    type: datetime_default
+    type: yearonly_default
     weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_performer_bio:
     type: text_textarea_with_summary
-    weight: 12
+    weight: 16
     region: content
     settings:
       rows: 9
@@ -171,7 +175,7 @@ content:
     third_party_settings: {  }
   field_performer_position_title:
     type: string_textfield
-    weight: 10
+    weight: 14
     region: content
     settings:
       size: 60
