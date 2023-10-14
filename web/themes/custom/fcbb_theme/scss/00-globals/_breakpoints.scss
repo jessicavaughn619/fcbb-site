@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    #Breakpoints
+\*------------------------------------*/
+// Breakpoints and Container Margins
+$breakpoints: (
+  xs: (size: 0px, margin: 16px),
+  sm: (size: 480px, margin: 16px),
+  md: (size: 768px, margin: 24px),
+  lg: (size: 1040px, margin: 24px),
+  xl: (size: 1440px, margin: 32px)
+);
+
+// Breakpoint Sass Variables
+$breakpoint-xs: 'screen and (min-width: #{map-get(map-get($breakpoints, xs), size)})';
+$breakpoint-sm: 'screen and (min-width: #{map-get(map-get($breakpoints, sm), size)})';
+$breakpoint-md: 'screen and (min-width: #{map-get(map-get($breakpoints, md), size)})';
+$breakpoint-lg: 'screen and (min-width: #{map-get(map-get($breakpoints, lg), size)})';
+$breakpoint-xl: 'screen and (min-width: #{map-get(map-get($breakpoints, xl), size)})';
+
+// $breakpoint-sm: map-get(map-get($breakpoints, sm), size);
+// $breakpoint-md: map-get(map-get($breakpoints, md), size);
+// $breakpoint-lg: map-get(map-get($breakpoints, lg), size);
+// $breakpoint-xl: map-get(map-get($breakpoints, xl), size);
+
+// Margin Sass Variables
+$breakpoint-xs-margin: map-get(map-get($breakpoints, xs), margin);
+$breakpoint-sm-margin: map-get(map-get($breakpoints, sm), margin);
+$breakpoint-md-margin: map-get(map-get($breakpoints, md), margin);
+$breakpoint-lg-margin: map-get(map-get($breakpoints, lg), margin);
+$breakpoint-xl-margin: map-get(map-get($breakpoints, xl), margin);
+
+$max-width: $breakpoint-lg;
+$body-max-width: 700;
+$text-measure: $body-max-width;
+
+$mobileMargins: 7%;
