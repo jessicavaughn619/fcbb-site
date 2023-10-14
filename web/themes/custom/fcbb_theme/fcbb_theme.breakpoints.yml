@@ -1,0 +1,41 @@
+fcbb_theme.xsmall:
+  label: Smallest
+  mediaQuery: 'screen and (max-width: 479px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+fcbb_theme.small:
+  label: Small
+  mediaQuery: 'screen and (min-width: 480px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+fcbb_theme.medium:
+  label: Medium
+  mediaQuery: 'screen and (min-width: 768px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+fcbb_theme.large:
+  label: large
+  mediaQuery: 'screen and (min-width: 1040px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+fcbb_theme.xlarge:
+  label: Extra Large
+  mediaQuery: 'screen and (min-width: 1440px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+fcbb_theme.xxlarge:
+  label: Largest
+  mediaQuery: 'screen and (min-width: 1440px)'
+  weight: 2
+  multipliers:
+    - 1x
