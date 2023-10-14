@@ -38,6 +38,7 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
+    {{ google_fonts|raw }}
   </head>
   <body{{ attributes.addClass(body_classes) }}>
     {#

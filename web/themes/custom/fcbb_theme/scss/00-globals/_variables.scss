@@ -1,0 +1,55 @@
+// Clamp sizes determined from https://www.marcbacon.com/tools/clamp-calculator/ ** see note below
+// viewport range 480px ($breakpoint-sm) to 1440px ($breakpoint-lg)
+// ** base 10px due to html font-size 62.5% trick **
+
+@import './spacing';
+
+$heading-sizes: (
+  'xl':  (font-size: clamp(3.8rem, 2.35rem + 3.021vw, 6.7rem),  margin: 0 0 $spacing-2xs),  // h1
+  'l':   (font-size: clamp(3rem, 2.6rem + 0.833vw, 3.8rem),     margin: 0 0 $spacing-sm),   // h2
+  'm':   (font-size: clamp(2.4rem, 2.1rem + 0.625vw, 3rem),     margin: 0 0 $spacing-sm),   // h3
+  's':   (font-size: clamp(2rem, 1.8rem + 0.417vw, 2.4rem),     margin: 0 0 $spacing-sm),   // h4
+  'xs':  (font-size: clamp(1.8rem, 1.7rem + 0.208vw, 2rem),     margin: 0 0 $spacing-2xs),   // h5
+  'xxs': (font-size: clamp(1.6rem, 1.5rem + 0.208vw, 1.8rem),   margin: 0 0 $spacing-2xs),   // h6
+);
+
+$display-sizes: (
+  'l':  (font-size: clamp(8rem, 6rem + 4.167vw, 12rem),         margin: 0 0 $spacing-2xs),
+  's':  (font-size: clamp(6.7rem, 6.05rem + 1.354vw, 8rem),     margin: 0 0 $spacing-2xs),
+);
+
+$body-designs: (
+  "body-paragraph": (
+    font-size: clamp(1.6rem, 1.5rem + 0.208vw, 1.8rem), 
+    font-family: $poppins, 
+    line-height: 1.6, 
+    font-weight: normal
+    ),
+  "body-paragraph-bold": (
+    font-size: clamp(1.6rem, 1.5rem + 0.208vw, 1.8rem), 
+    font-family: $poppins, 
+    line-height: 1.6, 
+    font-weight: bold
+    ),
+  "intro-paragraph": (
+    font-size: clamp(1.8rem, 1.65rem + 0.313vw, 2.1rem), 
+    font-family: $poppins, 
+    line-height: 1.5, 
+    font-weight: 500),
+  "quote": (
+    font-size: clamp(1.8rem, 1.65rem + 0.313vw, 2.1rem), 
+    font-family: $poppins, 
+    line-height: 1.5, 
+    font-weight: 500),
+  "caption": (
+    font-size: 1.4rem, 
+    line-height: 1.4, 
+    font-style: italic,
+    opacity: .6),
+  "dateline": (
+    font-size: 1.2rem, 
+    line-height: 1.3, 
+    font-style: normal, 
+    letter-spacing: 2px, 
+    text-transform: uppercase)
+);

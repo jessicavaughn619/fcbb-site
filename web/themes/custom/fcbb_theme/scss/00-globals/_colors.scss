@@ -1,0 +1,29 @@
+$black: #000;
+$text-black: #021521;
+$white: #fff;
+$off-white: #fafafa;
+$error: #ee0050;
+$primary-background: #fafafa;
+$secondary-background: #005eb8;
+$primary-blue: #005eb8;
+$primary-blue-dark: #013A6D;
+$light-blue: #ebf4fa;
+
+$colors: (
+    'black': $black,
+    'text-black': $text-black,
+    'white': $white,
+    'off-site': $off-white,
+    'error': $error,
+    'primary-background': $primary-background,
+    'secondary-background': $secondary-background,
+    'primary-blue': $primary-blue,
+    'primary-blue-dark': $primary-blue-dark,
+    'light-blue': $light-blue
+);
+
+:root {
+    @each $color, $hex in $colors {
+        --color-#{color}: #{$hex};
+    }
+}

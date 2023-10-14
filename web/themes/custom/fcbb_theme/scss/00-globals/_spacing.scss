@@ -1,0 +1,45 @@
+$spacing-none: 0;
+$spacing-2xs: 8px;
+$spacing-xs: 12px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 40px;
+$spacing-2xl: 48px;
+
+$layout-xs: 40px;
+$layout-sm: 48px;
+$layout-md: 64px;
+$layout-lg: 120px;
+$layout-xl: 144px;
+$layout-2xl: 160px;
+
+$layouts: (
+    'xs': $layout-xs,
+    'sm': $layout-sm,
+    'md': $layout-md,
+    'lg': $layout-lg,
+    'xl': $layout-xl,
+    '2xl': $layout-2xl,
+);
+
+$spacings: (
+    'none': 0,
+    '2xs': $spacing-2xs,
+    'xs': $spacing-xs,
+    'sm': $spacing-sm,
+    'md': $spacing-md,
+    'lg': $spacing-lg,
+    'xl': $spacing-xl,
+    '2xl': $spacing-2xl,
+);
+
+:root {
+    @each $layout, $size in $layouts {
+        --layout-#{$layout}: #{$size};
+    }
+
+    @each $spacing, $size in $spacings {
+        --spacing-#{$spacing}: #{$size};
+    }
+}

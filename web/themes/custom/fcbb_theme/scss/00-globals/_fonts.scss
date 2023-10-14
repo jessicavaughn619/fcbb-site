@@ -1,0 +1,38 @@
+@import './typesetting';
+
+$fontBaseDir: 'theme/fcbb_theme/fonts';
+
+$poppinsDir: '#{$fontBaseDir}/poppins';
+
+// Poppins regular
+@font-face {
+    font-family: $poppins;
+    src: url('#{$poppinsDir}/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Poppins bold
+@font-face {
+    font-family: $poppins;
+    src: url('#{$poppinsDir}/Poppins-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+// Poppins italic
+@font-face {
+    font-family: $poppins;
+    src: url('#{$poppinsDir}/Poppins-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+// Poppins bold italic
+@font-face {
+    font-family: $poppins;
+    src: url('#{$poppinsDir}/Poppins-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
