@@ -2,6 +2,66 @@
 
 use Drupal\Component\Utility\Html;
 
+function fcbb_theme_theme($existing, $type, $theme, $path) {
+    $theme_path = Drupal::theme()->getActiveTheme()->getPath();
+    return [
+      'header_block' => [
+        // 'template' => 'global-header',
+        'variables' => [],
+        'path' => $theme_path . '/templates'
+      ],
+      'footer_block' => [
+        // 'template' => 'global-footer',
+        'variables' => [],
+        'path' => $theme_path . '/templates'
+      ],
+      'style_tile' => [
+        'template' => 'style-tile',
+        'variables' => [],
+        'path' => $theme_path . '/templates'
+      ],
+      'announcement_banner' => [
+        'template' => 'announcement-banner',
+        'variables' => [],
+        'path' => $theme_path . '/templates'
+      ]
+    ];
+}
+
+
+/**
+ * Alter styleguide elements.
+ *
+ * @param &$items
+ *   An array of items to be displayed.
+ *
+ * @return
+ *   No return value. Modify $items by reference.
+ *
+ * @see hook_styleguide()
+ */
+function fcbb_theme_styleguide_alter(&$items) {
+
+    // // POST LAUNCH: unset most items so we can better proof our markup
+    // $headings_text = $items['headings_text'];
+  
+    // foreach ($items as $k => $item) {
+    //   unset($items[$k]);
+    // }
+  
+    // $items['headings_text'] = $headings_text;
+    $items['swatches'] = array(
+      'title' => t('Style Tile'),
+      'content' => [
+        '#theme' => 'style_tile',
+      ],
+      'group' => t('User interface Miles'),
+    );
+    // $items['table']['content']['#prefix'] = '<article>';
+    // $items['table']['content']['#suffix'] = '</article>';
+}
+  
+
 function fcbb_theme_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = \Drupal::service('path.matcher')
         ->isFrontPage() ? 'frontpage' : 'not-front';

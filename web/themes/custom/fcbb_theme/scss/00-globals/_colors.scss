@@ -27,3 +27,62 @@ $colors: (
         --color-#{color}: #{$hex};
     }
 }
+
+.color {
+    &.text-black { color: $text-black; }
+    &.primary-background { color: $primary-background; }
+    &.secondary-background { color: $secondary-background; }
+    &.primary-blue { color: $primary-blue; }
+    &.primary-blue-dark { color: $primary-blue-dark; }
+    &.light-blue { color: $light-blue; }
+  }
+  
+.fill {
+    &.text-black { background-color: $text-black; }
+    &.primary-background { background-color: $primary-background; }
+    &.secondary-background { background-color: $secondary-background; }
+    &.primary-blue { background-color: $primary-blue; }
+    &.primary-blue-dark { background-color: $primary-blue-dark; }
+    &.light-blue { background-color: $light-blue; }
+}
+
+// styleguide color swatches
+// div.styleguide { overflow: hidden; }
+@media(min-width: 600px) {
+    .swatches {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 120px 120px 120px;
+      grid-gap: 10px / 2;
+      grid-template-areas: "s1 s2 s3 s4"
+                            "s5 s6 s7 s8"
+                            "s9 s10 s11 s12";
+    }
+}
+.swatch {
+    line-height: 30px;
+    position: relative;
+    border: 1px solid $text-black;
+    span {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        border-top: 1px solid $text-black;
+        background-color: white;
+        font-size: 12px;
+        line-height: 1;
+        padding: 1em 0;
+        letter-spacing: 0.1em;
+    }
+  
+    @media(max-width: 601px) {
+        height: 120px;
+        margin: 0 0 10px;
+    }
+  
+    @for $i from 1 through 12 {
+        &:nth-child(#{$i}) { grid-area: s#{$i}; }
+    }
+}

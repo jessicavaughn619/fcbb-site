@@ -1,0 +1,208 @@
+<article>
+<div>
+  <h2 class="styleguide">Miles Stuff</h2>
+  <hr />
+</div>
+
+<div>
+  <h1 class="display-l">Fountain City Brass Band (Large Display)</h1>
+  <h1 class="display-s">Fountain City Brass Band (Small Display)</h1>
+
+  <p class="lead">Intro Copy enim eiusmod ut cillum dolore in laboris <a href="#">laborum culpa</a> labore nisi dolore.</p>
+
+  <p>Veniam enim eiusmod ut <a href="#">Anchor Link plus descender</a> dolore in laboris laborum culpa labore nisi
+    dolore. Mollit consectetur ad Excepteur fugiat eiusmod reprehenderit. In non ut sit dolore labore dolore ut Ut et
+    laboris aute. Quis minim ut sit ut in nostrud do voluptate Ut sit dolore. Sint pariatur ut qui sed nisi nisi
+    eiusmod sunt tempor. Dolor quis non occaecat est dolore adipisicing in occaecat. Aliqua magna officia cupidatat in
+    sed ullamco. Ut enim occaecat nostrud sed aliquip tempor Duis minim exercitation laborum.</p>
+  <blockquote><p>Cast a line and catch your dinner straight out of the water.</p></blockquote>
+  <h3>Officia <a href="#">estp</a> <em>nulla</em></h3>
+  <p>Reprehenderit fugiat deserunt deserunt elit ad est qui. Aliqua laborum magna veniam id voluptate nisi id. Velit
+    elit cupidatat exercitation proident sunt exercitation consectetur elit eu ullamco deserunt voluptate. <a href="#">Sunt
+    reprehenderit pariatur ad dolore cillum veniam reprehenderit sed id. Eiusmod incididunt consectetur proident sint
+    ex incididunt.</a></p>
+
+  <ol>
+    <li>Ordered list item</li>
+    <li>Ordered list item</li>
+    <li><a href="#">Ordered list nested</a>
+      <ol>
+        <li>Subitem</li>
+        <li>Subitem</li>
+        <li>Subitem</li>
+      </ol>
+    </li>
+    <li>Ordered list item</li>
+  </ol>
+
+  <ul>
+    <li>Unordered list item</li>
+    <li>Unordered list item</li>
+    <li>Unordered list nested
+      <ul>
+        <li>Subitem</li>
+        <li>Subitem</li>
+        <li>Subitem</li>
+      </ul>
+    </li>
+    <li>Unordered list item</li>
+  </ul>
+</div>
+
+<div>
+  <h2>Buttons and Links</h2>
+</div>
+
+<div>
+  <div style="padding: 50px; display: flex; flex-direction: column; gap: 1rem; align-items: flex-start;">
+    <div style="width: 100%; padding: 10px; display: flex; flex-direction: row; gap: 4rem; align-items: flex-start; justify-content: center;">
+      <h3>Outline Button</h3>
+      <div class='outline-button' data-text="Outline Button (Default)">
+        <a class='button-link' href="#">Outline Button (Default)</a>
+      </div>
+      <h3>Filled Button</h3>
+      <div class='filled-button' data-text="Filled Button">
+        <a class='button-link' href="#">Filled Button</a>
+      </div>
+    </div>
+    <div style="width: 100%; padding: 10px; display: flex; flex-direction: row; gap: 4rem; align-items: flex-start; justify-content: center;">
+      <h3>Arrow CTA</h3>
+      <a class='arrow-cta' href="#"><span>Arrow CTA</span></a>
+    </div>
+  </div>
+</div>
+
+<div>
+  <h2>Colors</h2>
+</div>
+
+<div class="swatches">
+  <div class="swatch fill text-black"><span>text-black</span></div>
+  <div class="swatch fill primary-background"><span>primary-background</span></div>
+  <div class="swatch fill secondary-background"><span>secondary-background</span></div>
+  <div class="swatch fill primary-blue"><span>primary-blue</span></div>
+  <div class="swatch fill primary-blue-dark"><span>primary-blue-dark</span></div>
+  <div class="swatch fill light-blue"><span>light-blue</span></div>
+</div>
+
+<div>
+  <h2>Containers</h2>
+</div>
+
+<div class='styleguide-containers'>
+  <div class='styleguide-containers'>
+    <div class='fluid-container fill dark-blue center'>fluid-container</div>
+  </div>
+  <div class='styleguide-containers'>
+    <div class='fixed-container-xl fill dark-blue center'>fixed-container-xl (centered)</div>
+    <div class='fixed-container-l fill dark-blue center'>fixed-container-l (centered)</div>
+    <div class='fixed-container-m fill dark-blue center'>fixed-container-m (centered)</div>
+    <div class='fixed-container-sm fill dark-blue center'>fixed-container-sm (centered)</div>
+  </div>
+  <div class='styleguide-containers'>
+    <div class='fixed-container-xl fill dark-blue left'>fixed-container-xl (left-align)</div>
+    <div class='fixed-container-l fill dark-blue left'>fixed-container-l (left-align)</div>
+    <div class='fixed-container-m fill dark-blue left'>fixed-container-m (left-align)</div>
+    <div class='fixed-container-sm fill dark-blue left'>fixed-container-sm (left-align)</div>
+  </div>
+  <div class='styleguide-containers'>
+    <div class='fixed-container-xl fill dark-blue right'>fixed-container-xl (right-align)</div>
+    <div class='fixed-container-l fill dark-blue right'>fixed-container-l (right-align)</div>
+    <div class='fixed-container-m fill dark-blue right'>fixed-container-m (right-align)</div>
+    <div class='fixed-container-sm fill dark-blue right'>fixed-container-sm (right-align)</div>
+  </div>
+</div>
+
+<div>
+  <h2>Various Form Inputs</h2>
+</div>
+
+<div class="fixed-container-lg">
+<form style="display: flex; flex-direction: column; align-items: flex-start;">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+    <br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    <br>
+
+    <label for="country">Country:</label>
+    <select id="country" name="country" required>
+      <option value="" disabled selected>Select your country</option>
+      <option value="usa">United States</option>
+      <option value="canada">Canada</option>
+      <option value="uk">United Kingdom</option>
+      <option value="australia">Australia</option>
+    </select>
+    <br>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+      <option value="" disabled selected>Select your gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    <br>
+
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color" name="color" value="#ff0000">
+    <br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    <br>
+
+    <label for="birthdate">Birthdate:</label>
+    <input type="date" id="birthdate" name="birthdate" required>
+    <br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+    <br>
+
+    <label for="search">Search Query:</label>
+    <input type="search" id="search" name="search" placeholder="Enter search keywords">
+    <br>
+
+    <label for="url">Website URL:</label>
+    <input type="url" id="url" name="url" placeholder="Enter a valid URL">
+    <br>
+
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color" name="color" value="#ff0000">
+    <br>
+
+    <label for="number">Quantity:</label>
+    <input type="number" id="number" name="number" placeholder="Enter a number" min="1" max="10" step="1">
+    <br>
+
+    <label for="range">Rating:</label>
+    <input type="range" id="range" name="range" min="1" max="5" step="1">
+    <br>
+
+    <label for="textarea">Comments:</label>
+    <textarea id="textarea" name="textarea" placeholder="Enter your comments"></textarea>
+    <br>
+
+    <label for="file">Upload File:</label>
+    <input type="file" id="file" name="file">
+    <br>
+
+    <label for="checkbox">Agree to Terms:</label>
+    <input type="checkbox" id="checkbox" name="checkbox">
+    <br>
+
+    <label for="radio1">Option 1:</label>
+    <input type="radio" id="radio1" name="radio" value="option1">
+    
+    <label for="radio2">Option 2:</label>
+    <input type="radio" id="radio2" name="radio" value="option2">
+    <br>
+
+    <input class="button" type="submit" value="Submit">
+  </form>
+</div>
+
+</article>

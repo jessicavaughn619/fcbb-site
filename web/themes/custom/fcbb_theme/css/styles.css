@@ -11,6 +11,114 @@
   --color-color: #ebf4fa;
 }
 
+.color.text-black {
+  color: #021521;
+}
+.color.primary-background {
+  color: #fafafa;
+}
+.color.secondary-background {
+  color: #005eb8;
+}
+.color.primary-blue {
+  color: #005eb8;
+}
+.color.primary-blue-dark {
+  color: #013A6D;
+}
+.color.light-blue {
+  color: #ebf4fa;
+}
+
+.fill.text-black {
+  background-color: #021521;
+}
+.fill.primary-background {
+  background-color: #fafafa;
+}
+.fill.secondary-background {
+  background-color: #005eb8;
+}
+.fill.primary-blue {
+  background-color: #005eb8;
+}
+.fill.primary-blue-dark {
+  background-color: #013A6D;
+}
+.fill.light-blue {
+  background-color: #ebf4fa;
+}
+
+@media (min-width: 600px) {
+  .swatches {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 120px 120px 120px;
+    grid-gap: 10px/2;
+    grid-template-areas: "s1 s2 s3 s4" "s5 s6 s7 s8" "s9 s10 s11 s12";
+  }
+}
+.swatch {
+  line-height: 30px;
+  position: relative;
+  border: 1px solid #021521;
+}
+.swatch span {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #021521;
+  background-color: white;
+  font-size: 12px;
+  line-height: 1;
+  padding: 1em 0;
+  letter-spacing: 0.1em;
+}
+@media (max-width: 601px) {
+  .swatch {
+    height: 120px;
+    margin: 0 0 10px;
+  }
+}
+.swatch:nth-child(1) {
+  grid-area: s1;
+}
+.swatch:nth-child(2) {
+  grid-area: s2;
+}
+.swatch:nth-child(3) {
+  grid-area: s3;
+}
+.swatch:nth-child(4) {
+  grid-area: s4;
+}
+.swatch:nth-child(5) {
+  grid-area: s5;
+}
+.swatch:nth-child(6) {
+  grid-area: s6;
+}
+.swatch:nth-child(7) {
+  grid-area: s7;
+}
+.swatch:nth-child(8) {
+  grid-area: s8;
+}
+.swatch:nth-child(9) {
+  grid-area: s9;
+}
+.swatch:nth-child(10) {
+  grid-area: s10;
+}
+.swatch:nth-child(11) {
+  grid-area: s11;
+}
+.swatch:nth-child(12) {
+  grid-area: s12;
+}
+
 @font-face {
   font-family: "Poppins", sans-serif;
   src: url("theme/fcbb_theme/fonts/poppins/Poppins-Regular.ttf") format("truetype");
@@ -69,6 +177,9 @@
   --spacing-2xl: 48px;
 }
 
+/*------------------------------------*\
+    #Breakpoints
+\*------------------------------------*/
 /*------------------------------------*\
     #Font sizes
 \*------------------------------------*/

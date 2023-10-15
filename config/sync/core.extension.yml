@@ -47,6 +47,7 @@ module:
   responsive_image: 0
   search: 0
   shortcut: 0
+  styleguide: 0
   swiper_formatter: 0
   system: 0
   taxonomy: 0
