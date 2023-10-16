@@ -1,0 +1,19 @@
+uuid: 98378653-c007-479c-84d4-57197d3c8bc0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - yearonly
+id: node.field_member_year_joined
+field_name: field_member_year_joined
+entity_type: node
+type: yearonly
+settings: {  }
+module: yearonly
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
