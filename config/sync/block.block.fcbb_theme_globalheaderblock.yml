@@ -1,0 +1,20 @@
+uuid: a4ad5a1d-cd79-4ba5-8fed-6d724789b0d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - fcbb_main
+  theme:
+    - fcbb_theme
+id: fcbb_theme_globalheaderblock
+theme: fcbb_theme
+region: header
+weight: -7
+provider: null
+plugin: header_block
+settings:
+  id: header_block
+  label: 'Global Header Block'
+  label_display: visible
+  provider: fcbb_main
+visibility: {  }

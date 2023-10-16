@@ -1,0 +1,20 @@
+uuid: 56c90c61-54f3-49c1-8be9-5617f683fb49
+langcode: en
+status: true
+dependencies:
+  module:
+    - fcbb_main
+  theme:
+    - fcbb_theme
+id: fcbb_theme_footerblock
+theme: fcbb_theme
+region: footer
+weight: 0
+provider: null
+plugin: footer_block
+settings:
+  id: footer_block
+  label: 'Footer Block'
+  label_display: visible
+  provider: fcbb_main
+visibility: {  }

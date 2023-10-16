@@ -44,8 +44,8 @@ function fcbb_main_theme_suggestions_alter(&$suggestions, &$vars, $hook){
 function fcbb_main_preprocess_header_block(&$variables) {
   $theme_path = Drupal::theme()->getActiveTheme()->getPath();
   $variables['theme_path'] = '/' . $theme_path;
-  $variables['logo_svg'] = file_get_contents($theme_path . '/images/svg/Miles_Logo_Color.svg');
-  $variables['logo_url'] = '/' . $theme_path . '/images/svg/Miles_Logo_Color.svg';
+  $variables['logo_svg'] = file_get_contents($theme_path . '/images/logo.png');
+  $variables['logo_url'] = '/' . $theme_path . '/images/logo.png';
   $variables['main_menu'] = _render_menu_links('main', 10);
   $variables['social_links'] = _render_menu_links('social-links', 1);
   $variables['home_url'] = '/';
@@ -54,8 +54,8 @@ function fcbb_main_preprocess_header_block(&$variables) {
 function fcbb_main_preprocess_footer_block(&$variables) {
   $theme_path = Drupal::theme()->getActiveTheme()->getPath();
   $variables['theme_path'] = '/' . $theme_path;
-  $variables['logo_svg'] = file_get_contents($theme_path . '/images/svg/Miles_Logo_Color.svg');
-  $variables['logo_url'] = '/' . $theme_path . '/images/svg/Miles_Logo_Color.svg';
+  $variables['logo_svg'] = file_get_contents($theme_path . '/images/logo.png');
+  $variables['logo_url'] = '/' . $theme_path . '/images/logo.png';
   // $variables['busa_logo'] = file_create_url($theme_path . '/images/busa-logo-white.svg');
   $variables['footer_menu'] = _render_menu_links('footer', 1);
   $variables['social_links'] = _render_menu_links('social-links', 1);

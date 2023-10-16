@@ -1,0 +1,20 @@
+uuid: 3169d0cb-d1eb-4ba6-95f5-1a8332147db6
+langcode: en
+status: true
+dependencies:
+  module:
+    - fcbb_main
+  theme:
+    - fcbb_theme
+id: fcbb_theme_announcementbanner
+theme: fcbb_theme
+region: header
+weight: -8
+provider: null
+plugin: announcement_banner
+settings:
+  id: announcement_banner
+  label: 'Announcement Banner'
+  label_display: visible
+  provider: fcbb_main
+visibility: {  }
