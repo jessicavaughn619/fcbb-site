@@ -1,0 +1,10 @@
+uuid: 07cc346b-dbab-490e-a26b-64d48d13eb96
+langcode: en
+status: true
+dependencies: {  }
+id: education
+label: Education
+icon_uuid: null
+icon_default: null
+description: "Displays a member's education."
+behavior_plugins: {  }
