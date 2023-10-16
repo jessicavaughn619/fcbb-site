@@ -426,6 +426,12 @@ figure > p {
   font: inherit;
 }
 
+#main-menu .menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
 .node-landing-page.full {
   background-color: white;
 }
