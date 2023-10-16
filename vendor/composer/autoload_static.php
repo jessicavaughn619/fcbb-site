@@ -96,6 +96,10 @@ class ComposerStaticInitb10504d8a6758a1daeb1a84ab2a9541c
         array (
             'League\\Container\\' => 17,
         ),
+        'J' => 
+        array (
+            'Jasny\\Twig\\' => 11,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -334,6 +338,10 @@ class ComposerStaticInitb10504d8a6758a1daeb1a84ab2a9541c
         'League\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/container/src',
+        ),
+        'Jasny\\Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jasny/twig-extensions/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (

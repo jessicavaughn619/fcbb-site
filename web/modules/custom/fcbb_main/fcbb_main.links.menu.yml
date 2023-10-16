@@ -1,0 +1,12 @@
+fcbb_main.announcement_settings_form:
+  title: 'Announcement Settings'
+  route_name: fcbb_main.announcement_settings_form
+  description: 'Create an announcement message'
+  parent: system.admin_config_system
+  weight: -20
+fcbb_main.default_paragraph_settings_form:
+  title: 'Default Paragraphs'
+  route_name: fcbb_main.default_paragraph_settings_form
+  description: 'Set default paragraphs for content types'
+  parent: system.admin_config_system
+  weight: -19

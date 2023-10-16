@@ -33,7 +33,8 @@
         "drupal/twig_tweak": "^3.2",
         "drupal/webform": "^6.2@RC",
         "drupal/yearonly": "^9.1",
-        "drush/drush": "^12.2"
+        "drush/drush": "^12.2",
+        "jasny/twig-extensions": "^1.3"
     },
     "conflict": {
         "drupal/drupal": "*"

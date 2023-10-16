@@ -1,0 +1,273 @@
+<?php
+use Drupal\Component\Utility\Html;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\file\Entity\File;
+
+include_once 'fcbb_main.theme.inc'; // include theme functions, block and page callbacks
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function fcbb_main_page_attachments_alter(array &$attachments) {
+  // @TODO: add custom schema for front page
+  if ($node = get_current_node_or_revision() ) {
+    if ($node->hasField('field_structured_data')) {
+      if ($field_structured_data = $node->field_structured_data->getValue()) {
+        $structured_data = isset($field_structured_data[0]['value']) ? $field_structured_data[0]['value'] : null;
+        $attachments['#attached']['html_head']['schema_custom'] = [
+          [
+            '#type' => 'html_tag',
+            '#tag' => 'script',
+            '#value' => $structured_data,
+            '#attributes' => ['type' => 'application/ld+json'],
+          ],
+          'schema_custom',
+        ];
+      }
+    }
+  }
+}
+
+/**
+ * Alter styleguide elements.
+ *
+ * @param &$items
+ *   An array of items to be displayed.
+ *
+ * @return
+ *   No return value. Modify $items by reference.
+ *
+ * @see hook_styleguide()
+ */
+function fcbb_main_styleguide_alter(&$items) {
+
+  // // POST LAUNCH: unset most items so we can better proof our markup
+  // $headings_text = $items['headings_text'];
+
+  // foreach ($items as $k => $item) {
+  //   unset($items[$k]);
+  // }
+
+  // $items['headings_text'] = $headings_text;
+  $items['swatches'] = array(
+    'title' => t('Style Tile'),
+    'content' => [
+      '#theme' => 'style_tile',
+    ],
+    'group' => t('User interface Miles'),
+  );
+  // $items['table']['content']['#prefix'] = '<article>';
+  // $items['table']['content']['#suffix'] = '</article>';
+}
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function fcbb_main_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  switch ($form_id) {
+    case 'node_editorial_edit_form':
+    case 'node_editorial_form':
+    case 'node_news_form':
+    case 'node_news_edit_form':
+      $form['schema'] = [
+        '#type' => 'details',
+        '#title' => 'Schema',
+        '#group' => 'advanced',
+      ];
+      $form['field_structured_data']['#group'] = 'schema';
+      break;
+  }
+}
+
+function fcbb_main_theme_suggestions_page_alter(array &$suggestions, array &$variables) {
+  $current_path = Drupal::service('path.current')->getPath();
+  $patterns = "/admin/appearance/styleguide\n/user\n/user/*\n/media/*\n/webform/*"; // patterns separated by new lines
+  $match = Drupal::service('path.matcher')->matchPath($current_path, $patterns);
+  if ($match) {
+    return $suggestions[] = 'page__container';
+  }
+
+  // Custom 404 page
+  $request = \Drupal::request();
+  if ($exception = $request->attributes->get('exception')) {
+    $status_code = $exception->getStatusCode();
+    if (in_array($status_code, array(401, 403, 404))) {
+      $suggestions[] = 'page__error_404';
+      $variables['status_code_value'] = $status_code;
+    }
+  }
+}
+
+function fcbb_main_preprocess_html(&$variables) {
+  $request = Drupal::request();
+  if ($exception = $request->attributes->get('exception')) {
+    $status_code = $exception->getStatusCode();
+    if (in_array($status_code, array(401, 403, 404))) {
+      $variables['attributes']['class'][] = 'page-exception';
+    }
+  }
+}
+
+function fcbb_main_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  $current_node_type = $node->bundle();
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  $variables['node'] = $variables['elements']['#node'];
+  $variables['nid'] = $node->id();
+  $variables['is_frontpage'] = \Drupal::service('path.matcher')->isFrontPage();
+  // preprocess all nodes with basic classes
+  $variables['attributes']['class'][] = 'node';
+  $variables['attributes']['class'][] = 'node-' . Html::cleanCssIdentifier($node->bundle());
+  $variables['attributes']['class'][] = Html::cleanCssIdentifier($variables['view_mode']);
+  $variables['attributes']['data-node-id'] = $node->id();
+}
+
+function fcbb_main_node_prepare_form(\Drupal\Core\Entity\EntityInterface $node, $operation, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $node = $form_state->getFormObject()->getEntity();
+  $node_type = $node->bundle();
+  $default_paragraph_service = \Drupal::service('fcbb_main.default_paragraphs');
+  $default_paragraph_config = \Drupal::config('fcbb_main.default_paragraph_settings');
+  $default_paragraph_field = $default_paragraph_config->get($node_type . '_paragraphs_field')?:null;
+  $default_paragraphs = $default_paragraph_config->get($node_type . '_default_paragraphs')?:[];
+  $new_only = $default_paragraph_config->get($node_type . '_new_only')?:true;
+  if($default_paragraph_field && $node->hasField($default_paragraph_field) && !empty($default_paragraphs)) {
+    $default_paragraph_blocks = [];
+    foreach(array_column($default_paragraphs, 'target_id') as $paragraph_library_id) {
+      if($library_item = \Drupal::entityTypeManager()->getStorage('paragraphs_library_item')->load($paragraph_library_id)){
+        $original_paragraph = $default_paragraph_service->getReferencedParagraph($library_item);
+        $default_paragraph_blocks[$original_paragraph->bundle()] = $paragraph_library_id;
+      }
+    }
+    if($node->isNew()) {
+      $default_paragraph_service->attachDefaultParagraphs($node, $default_paragraph_field, $default_paragraph_blocks);
+    }
+  }
+}
+
+function fcbb_main_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $type = $paragraph->bundle();
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  $variables['attributes']['class'][] = 'paragraph';
+  $variables['attributes']['class'][] = 'paragraph-' . Html::cleanCssIdentifier($type);
+  $variables['attributes']['class'][] = Html::cleanCssIdentifier($variables['view_mode']);
+  $variables['attributes']['data-asset-id'] = $asset_id = $paragraph->id();
+
+  $route_match = \Drupal::routeMatch();
+  $node = $route_match->getParameter('node');
+
+  if ($node instanceof Node) {
+    $content_type = $node->bundle();
+    $variables['attributes']['class'][] = 'node-type--' . Html::cleanCssIdentifier($content_type);
+  }
+}
+
+function fcbb_main_preprocess_media(&$variables) {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  $variables['media'] = $variables['elements']['#media'];
+  $media = $variables['media'];
+
+  // preprocess all media with basic classes
+  $variables['attributes']['class'][] = 'media';
+  $variables['attributes']['class'][] = 'media-' . Html::cleanCssIdentifier($media->bundle());
+  $variables['attributes']['class'][] = Html::cleanCssIdentifier($variables['view_mode']);
+  $variables['attributes']['data-asset-id'] = $asset_id = $media->id();
+}
+
+function get_current_node_or_revision() {
+  // Get the current node
+  $node = \Drupal::routeMatch()->getParameter('node');
+  // If the node doesn't exist, check if we are editing existing content with a revision
+  if (!$node) {
+    $revision = \Drupal::routeMatch()->getParameter('node_revision');
+    if ($revision) {
+      // Load the specified revision of content
+      $node = \Drupal::entityTypeManager()
+        ->getStorage('node')
+        ->loadRevision($revision);
+    }
+  }
+
+  return $node;
+}
+
+function get_video_embed_url($url) {
+  // YouTube - handles variety of formats
+  // https://stackoverflow.com/questions/2936467/parse-youtube-video-id-using-preg-match
+  if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match)) {
+    $youtube_id = $match[1];
+    return 'https://www.youtube.com/embed/' . $youtube_id . '?rel=0&amp;enablejsapi=1&amp;controls=1&amp;showinfo=0&amp;modestbranding=1&amp;wmode=transparent&amp;autoplay=1';
+  }
+
+  // otherwise return original url
+  return $url;
+}
+
+function fcbb_main_get_site_section($nid=false) {
+  if ($nid) {
+    $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $nid);
+  } else {
+    $current_path = Drupal::service('path.current')->getPath();
+    $alias = Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  }
+  switch ($alias) {
+    case Drupal::service('path.matcher')->matchPath($alias, "/media\n/media/*"):
+      return 'media';
+    case Drupal::service('path.matcher')->matchPath($alias, "/meetings\n/meetings/*"):
+      return 'meetings';
+    case Drupal::service('path.matcher')->matchPath($alias, "/members\n/members/*"):
+      return 'members';
+    case Drupal::service('path.matcher')->matchPath($alias, "/sports-entertainment\n/sports-entertainment/*"):
+      return 'sports-entertainment';
+    case Drupal::service('path.matcher')->matchPath($alias, "/travel-trade\n/travel-trade/*"):
+      return 'travel-trade';
+    default:
+      return 'main';
+  }
+}
+
+function fcbb_main_cron() {
+  $expiredPublished = \Drupal::entityQuery('node')
+    ->condition('field_expire_content', date('Y-m-d'), '<')
+    ->condition('status', 1)
+    ->execute();
+  $nodes = Drupal::entityTypeManager()->getStorage('node')->loadMultiple(array_values($expiredPublished));
+  foreach($nodes as $node) {
+    $node->setUnpublished();
+    if ($node->hasField('moderation_state')) {
+      $node->set('moderation_state', 'archived');
+    }
+    \Drupal::messenger()->addMessage(['Archived :title', [':title' => $node->label()]]);
+    $node->save();
+  }
+}
+function fcbb_main_local_tasks_alter(&$data, $route_name) {
+  unset($data['entity.block_content.collection']);
+}
+
+/**
+ * Helper function to extract video ID from oEmbed URL.
+ */
+function extract_video_id_from_oembed_url($oembed_url) {
+  // Check if it's a YouTube URL with the "watch" format.
+  if (strpos($oembed_url, 'youtube.com/watch') !== false) {
+    $query_params = parse_url($oembed_url, PHP_URL_QUERY);
+    parse_str($query_params, $query_params_array);
+    if (isset($query_params_array['v'])) {
+      return $query_params_array['v'];
+    }
+  }
+  // Check if it's a YouTube URL with the "embed" format.
+  elseif (preg_match('/youtube\.com\/embed\/([a-zA-Z0-9_-]+)/', $oembed_url, $matches)) {
+    return $matches[1];
+  }
+  // Check if it's a Vimeo URL.
+  elseif (preg_match('/vimeo\.com\/video\/([0-9]+)/', $oembed_url, $matches)) {
+    return $matches[1];
+  }
+
+  // Return null if the video platform is not recognized.
+  return null;
+}

@@ -1,0 +1,5 @@
+name: Fountain City Brass Band Main Module
+description: General Blocks and Preprocessing
+package: FCBB
+type: module
+core_version_requirement: ^8 || ^9 || ^10
