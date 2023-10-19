@@ -432,6 +432,14 @@ figure > p {
   gap: 2rem;
 }
 
+#footer {
+  background-color: purple;
+}
+
+#header {
+  background-color: rgb(116, 116, 126);
+}
+
 .node-landing-page.full {
   background-color: white;
 }
