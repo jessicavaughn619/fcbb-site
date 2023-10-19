@@ -15,6 +15,6 @@ plugin: footer_block
 settings:
   id: footer_block
   label: 'Footer Block'
-  label_display: visible
+  label_display: '0'
   provider: fcbb_main
 visibility: {  }

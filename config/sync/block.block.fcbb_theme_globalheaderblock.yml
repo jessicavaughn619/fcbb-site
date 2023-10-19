@@ -15,6 +15,6 @@ plugin: header_block
 settings:
   id: header_block
   label: 'Global Header Block'
-  label_display: visible
+  label_display: '0'
   provider: fcbb_main
 visibility: {  }

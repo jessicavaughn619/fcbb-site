@@ -15,6 +15,6 @@ plugin: announcement_banner
 settings:
   id: announcement_banner
   label: 'Announcement Banner'
-  label_display: visible
+  label_display: '0'
   provider: fcbb_main
 visibility: {  }
