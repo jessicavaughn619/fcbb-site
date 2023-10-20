@@ -433,11 +433,19 @@ figure > p {
 }
 
 #footer {
-  background-color: purple;
+  display: block;
+  text-align: center;
+  background-color: #fafafa;
+  padding: 2rem;
 }
 
 #header {
-  background-color: rgb(116, 116, 126);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #005eb8;
+  padding: 2rem;
+  align-items: center;
 }
 
 .node-landing-page.full {
