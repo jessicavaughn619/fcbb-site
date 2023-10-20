@@ -449,5 +449,22 @@ figure > p {
 }
 
 .node-landing-page.full {
-  background-color: white;
+  background-color: #fafafa;
+}
+.node-landing-page.full .wrapper--field-landing-hero-image {
+  position: relative;
+}
+.node-landing-page.full .field-landing-intro-container {
+  position: absolute;
+  top: 10rem;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.node-landing-page.full .field-landing-intro {
+  text-align: center;
+  color: #fafafa;
+}
+.node-landing-page.full .field-landing-intro > h2 {
+  color: #fafafa;
 }

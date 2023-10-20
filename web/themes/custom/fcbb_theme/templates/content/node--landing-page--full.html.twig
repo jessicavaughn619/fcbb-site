@@ -12,7 +12,17 @@
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content }}
+    <div class="wrapper--field-landing-hero-image">
+      <div class="field-landing-hero-image">
+        {{ content.field_landing_hero_image }}
+        <div class="field-landing-intro-container">
+          <div class="field-landing-intro">
+          <h2>{{ content.field_landing_display_title }}</h2>
+          <p>{{ content.field_landing_intro }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </article>
