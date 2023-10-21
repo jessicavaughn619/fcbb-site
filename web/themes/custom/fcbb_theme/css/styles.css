@@ -456,6 +456,26 @@ figure > p {
   align-items: center;
   background: linear-gradient(to top, #000, #005eb8);
 }
+#header a {
+  text-decoration: none;
+  color: #fafafa;
+  padding: 1rem 1.5rem;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  background-size: 0 4px;
+  transition: background-size 0.4s;
+  align-items: center;
+}
+#header a:hover {
+  background-image: linear-gradient(#ebf4fa, #ebf4fa);
+  background-position-x: 50%;
+  background-size: 100% 4px;
+}
+#header a.is-active {
+  background-image: linear-gradient(#005eb8, #005eb8);
+  background-position-x: 50%;
+  background-size: 100% 4px;
+}
 
 .node-landing-page.full {
   background-color: #000;
@@ -466,9 +486,14 @@ figure > p {
 .node-landing-page.full .field-landing-intro-container {
   position: absolute;
   top: 10rem;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
   background: rgba(0, 94, 184, 0.5);
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .node-landing-page.full .field-landing-intro {
   text-align: center;
