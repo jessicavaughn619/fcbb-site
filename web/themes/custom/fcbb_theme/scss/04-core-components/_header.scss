@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: $secondary-background;
+    color: $text-white;
     padding: 2rem;
     align-items: center;
+    background: linear-gradient(to top, $primary-background, $primary-blue);
 }

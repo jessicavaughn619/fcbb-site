@@ -9,17 +9,12 @@
         position: absolute;
         top: 10rem;
         width: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 94, 184, .5);
         z-index: 1;
     }
 
     .field-landing-intro {
         text-align: center;
-        color: $off-white;
-    }
-
-    .field-landing-intro > h2 {
-        color: $off-white;
     }
 
 }

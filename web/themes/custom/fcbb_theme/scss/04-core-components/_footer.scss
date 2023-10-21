@@ -1,6 +1,7 @@
 #footer {
     display: block;
     text-align: center;
-    background-color: $primary-background;
+    color: $text-white;
     padding: 2rem;
+    background: linear-gradient(to bottom, $primary-background, $primary-blue);
 }

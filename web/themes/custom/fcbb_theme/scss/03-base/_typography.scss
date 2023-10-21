@@ -9,13 +9,13 @@
 // Generate classes for each heading-size and also a medium-weight version of each size
 @each $size in map-keys($heading-sizes) {
   .heading-#{$size} { // .heading-l for example
-    color: $text-black;
+    color: $text-white;
     font-weight: normal;
     @include heading($size: $size);
   }
 
   .heading-#{$size}-med { // .heading-l-med for example
-    color: $text-black;
+    color: $text-white;
     font-weight: 500;
     @include heading($size: $size);
   }
@@ -23,7 +23,7 @@
 
 @each $size in map-keys($display-sizes) {
   .display-#{$size} { // .display-l for example
-    color: $text-black;
+    color: $text-white;
     font-weight: 500;
     @include display($size: $size);
   }
@@ -41,14 +41,16 @@
 html {
   font-size: 62.5%;
 }
+
 body {
   font-family: $font-family;
   font-size: clamp(1.6rem, 1.5rem + 0.208vw, 1.8rem);
   font-style: normal;
   font-weight: normal;
   line-height: 1.6;
-  color: $text-black;
+  color: $text-white;
 }
+
 p {
   @extend .body-paragraph;
   margin: 0 0 $spacing-lg;
@@ -89,7 +91,7 @@ h6 {
 
 .lead,
 .intro {
-  color: $text-black;
+  color: $text-white;
   @extend .intro-paragraph;
 }
 

@@ -1,10 +1,11 @@
 $black: #000;
 $text-black: #021521;
+$text-white: #fafafa;
 $white: #fff;
 $off-white: #fafafa;
 $error: #ee0050;
-$primary-background: #fafafa;
-$secondary-background: #005eb8;
+$primary-background: #000;
+$secondary-background: #fafafa;
 $primary-blue: #005eb8;
 $primary-blue-dark: #013A6D;
 $light-blue: #ebf4fa;
@@ -12,6 +13,7 @@ $light-blue: #ebf4fa;
 $colors: (
     'black': $black,
     'text-black': $text-black,
+    'text-white': $text-white,
     'white': $white,
     'off-site': $off-white,
     'error': $error,
@@ -30,6 +32,7 @@ $colors: (
 
 .color {
     &.text-black { color: $text-black; }
+    &.text-white { color: $text-white; }
     &.primary-background { color: $primary-background; }
     &.secondary-background { color: $secondary-background; }
     &.primary-blue { color: $primary-blue; }
@@ -39,6 +42,7 @@ $colors: (
   
 .fill {
     &.text-black { background-color: $text-black; }
+    &.text-white { color: $text-white; }
     &.primary-background { background-color: $primary-background; }
     &.secondary-background { background-color: $secondary-background; }
     &.primary-blue { background-color: $primary-blue; }
