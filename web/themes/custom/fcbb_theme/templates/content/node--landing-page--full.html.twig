@@ -27,7 +27,9 @@
     </div>
     {% endif %}
 
+    {% if not is_frontpage %}
     {{ content.body }}
+    {% endif %}
     {{ content.field_components }}
   </div>
 

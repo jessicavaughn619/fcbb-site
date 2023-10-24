@@ -65,6 +65,7 @@ use Drupal\Component\Utility\Html;
 function fcbb_theme_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = \Drupal::service('path.matcher')
         ->isFrontPage() ? 'frontpage' : 'not-front';
+        $variables['google_fonts'] = fcbb_theme_google_fonts();
 }
 
 function fcbb_theme_preprocess_node(&$variables) {
