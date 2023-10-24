@@ -1,0 +1,10 @@
+uuid: 2835b1a9-d835-4b92-948c-dc30d20c694b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.basic_cta
+label: 'Basic CTA'
+targetEntityType: media
+cache: true

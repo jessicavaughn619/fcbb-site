@@ -1,0 +1,29 @@
+uuid: 09a875ba-2fb0-45af-8881-4449fde961db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_image
+    - media.type.image
+    - paragraphs.paragraphs_type.basic_cta
+id: paragraph.basic_cta.field_cta_image
+field_name: field_cta_image
+entity_type: paragraph
+bundle: basic_cta
+label: 'CTA Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

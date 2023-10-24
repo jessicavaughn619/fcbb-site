@@ -1,0 +1,17 @@
+uuid: 239869d5-84f4-4757-89d3-df192dc4efa9
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: basic_cta_image
+label: 'Basic CTA Image (608x406 3:2)'
+effects:
+  3c76c1ec-bb76-4c19-be2f-b3ad137383f4:
+    uuid: 3c76c1ec-bb76-4c19-be2f-b3ad137383f4
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 608
+      height: 406
+      crop_type: focal_point

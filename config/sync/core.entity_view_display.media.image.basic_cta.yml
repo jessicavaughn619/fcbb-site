@@ -1,0 +1,34 @@
+uuid: 7a2771b1-3fc5-4817-82d9-47cab7e65087
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.basic_cta
+    - field.field.media.image.field_media_image
+    - image.style.basic_cta_image
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
+id: media.image.basic_cta
+targetEntityType: media
+bundle: image
+mode: basic_cta
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: basic_cta_image
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

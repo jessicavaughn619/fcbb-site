@@ -1,0 +1,10 @@
+uuid: 3c89304b-a1f4-465c-bfa0-c08d5ba5f838
+langcode: en
+status: true
+dependencies: {  }
+id: basic_cta
+label: 'Basic CTA'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
