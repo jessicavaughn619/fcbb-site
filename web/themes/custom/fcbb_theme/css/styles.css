@@ -479,11 +479,13 @@ figure > p {
 
 .node-landing-page.full {
   background-color: #000;
+  padding: 5rem;
 }
-.node-landing-page.full .wrapper--field-landing-hero-image {
+
+body.frontpage .wrapper--field-landing-hero-image {
   position: relative;
 }
-.node-landing-page.full .field-landing-intro-container {
+body.frontpage .field-landing-intro-container {
   position: absolute;
   top: 10rem;
   left: 50%;
@@ -503,5 +505,5 @@ figure > p {
 
 .paragraph-basic-cta {
   display: flex;
-  gap: 2rem;
+  gap: 5rem;
 }

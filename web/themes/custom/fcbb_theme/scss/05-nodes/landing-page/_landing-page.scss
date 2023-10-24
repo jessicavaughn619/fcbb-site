@@ -1,10 +1,13 @@
 .node-landing-page.full {
     background-color: $primary-background;
+    padding: 5rem;
 
+}
+
+body.frontpage {
     .wrapper--field-landing-hero-image {
         position: relative;
     }
-
     .field-landing-intro-container {
         position: absolute;
         top: 10rem;
@@ -18,5 +21,4 @@
         align-items: center;
         justify-content: center;
     }
-
 }

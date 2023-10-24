@@ -12,6 +12,7 @@
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('node__content') }}>
+    {% if content.field_landing_hero_image.0 is not empty %}
     <div class="wrapper--field-landing-hero-image">
         {{ content.field_landing_hero_image }}
         <div class="field-landing-intro-container">
@@ -19,8 +20,16 @@
           {{ content.field_landing_intro }}
         </div>
     </div>
+    {% else %}
+    <div class="field-landing-intro-container">
+    <h2>{{ content.field_landing_display_title|field_value }}</h2>
+    {{ content.field_landing_intro }}
+    </div>
+    {% endif %}
+
     {{ content.body }}
     {{ content.field_components }}
+    {{ dd(is_frontpage) }}
   </div>
 
 </article>
