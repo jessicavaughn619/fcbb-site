@@ -1,4 +1,9 @@
 .paragraph-basic-cta {
     display: flex;
     gap: 5rem;
+    justify-content: flex-start;
+
+    @media #{$breakpoint-lg} {
+        flex-direction: row;
+    }
 }

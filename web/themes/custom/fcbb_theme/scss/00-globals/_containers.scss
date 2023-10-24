@@ -1,0 +1,144 @@
+$containers: (
+  fluid-container: calc(100vw - var(--scrollbar-width)),
+  fixed-container-xl: 1240px,
+  fixed-container-l: 1030px,
+  fixed-container-m: 818px,
+  fixed-container-sm: 608px
+);
+
+// Loop through containers to create classes with max-width
+@each $container, $maxWidth in $containers {
+  .#{$container} {
+    // padding: $spacing-sm 0;
+    @if $container != fluid-container {
+      width: 100%;
+      max-width: $maxWidth;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      // gap: $spacing-sm;
+      flex: 1 0 0;
+    } @else {
+      width: $maxWidth;
+    }
+  }
+}
+
+// Loop through the breakpoints and apply margins to each container class (excluding fluid-container)
+@each $bp, $config in $breakpoints {
+  $size: map-get($config, size);
+  $margin: map-get($config, margin);
+
+  @media (min-width: $size) {
+    body {
+      margin-inline: $margin;
+    }
+    
+    @each $container, $maxWidth in $containers {
+      @if $container != fluid-container {
+        .#{$container} {
+          margin-left: $margin;
+          margin-right: $margin;
+        }
+      } @else {
+        .fluid-container {
+          margin-left: -$margin;
+        }
+      }
+    }
+  }
+}
+
+.fixed-container-sm,
+.fixed-container-m,
+.fixed-container-l,
+.fixed-container-xl {
+  &.center {
+    margin-inline: auto;
+  }
+
+  &.left {
+    margin-left: 0;
+    margin-right: auto;
+    justify-content: flex-start;
+  }
+
+  &.right {
+    margin-left: auto;
+    margin-right: 0;
+    justify-content: flex-end;
+  }
+
+  > .field--name-field-custom-block {
+    width: 100%;
+  }
+}
+
+.fluid-container {
+  .fixed-container-sm { // 608
+    padding-inline: var(--spacing-sm);
+
+    @media screen and (min-width: 624px) {
+      padding-inline: 0;
+    }
+  }
+  
+  .fixed-container-m { // 818
+    padding-inline: var(--spacing-sm);
+
+    @media #{$breakpoint-md} {
+      padding-inline: var(--spacing-md);
+    }
+ 
+    @media screen and (min-width: 842px) {
+      padding-inline: 0;
+    }
+  }
+
+  .fixed-container-l { // 1030
+    padding-inline: var(--spacing-sm);
+
+    @media #{$breakpoint-md} {
+      padding-inline: var(--spacing-md);
+    }
+
+    @media screen and (min-width: 1054px) {
+      padding-inline: 0;
+    }
+  }
+
+  .fixed-container-xl { // 1240
+    padding-inline: var(--spacing-sm);
+
+    @media #{$breakpoint-md} {
+      padding-inline: var(--spacing-md);
+    }
+
+    @media screen and (min-width: 1264px) {
+      padding-inline: 0;
+    }
+  }
+}
+
+.styleguide-containers {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+:root {
+  @each $container, $maxWidth in $containers {
+    --#{$container}: #{$maxWidth};
+  }
+  --scrollbar-width: 0;
+  --header-block-size: 9.6rem;
+  --header-offset: calc(var(--drupal-displace-offset-top, 0px) + var(--header-block-size) + var(--announcement-banner-height, 0px));
+}
+
+:root {
+  @each $bp, $config in $breakpoints {
+    --breakpoint-#{$bp}: #{map-get($config, size)};
+    --breakpoint-#{$bp}-margin: #{map-get($config, margin)};
+  }
+}

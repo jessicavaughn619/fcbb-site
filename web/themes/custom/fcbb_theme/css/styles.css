@@ -187,6 +187,277 @@
 /*------------------------------------*\
     #Breakpoints
 \*------------------------------------*/
+.fluid-container {
+  width: calc(100vw - var(--scrollbar-width));
+}
+
+.fixed-container-xl {
+  width: 100%;
+  max-width: 1240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1 0 0;
+}
+
+.fixed-container-l {
+  width: 100%;
+  max-width: 1030px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1 0 0;
+}
+
+.fixed-container-m {
+  width: 100%;
+  max-width: 818px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1 0 0;
+}
+
+.fixed-container-sm {
+  width: 100%;
+  max-width: 608px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1 0 0;
+}
+
+@media (min-width: 0px) {
+  body {
+    margin-inline: 16px;
+  }
+  .fluid-container {
+    margin-left: -16px;
+  }
+  .fixed-container-xl {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .fixed-container-l {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .fixed-container-m {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .fixed-container-sm {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+@media (min-width: 480px) {
+  body {
+    margin-inline: 16px;
+  }
+  .fluid-container {
+    margin-left: -16px;
+  }
+  .fixed-container-xl {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .fixed-container-l {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .fixed-container-m {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .fixed-container-sm {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    margin-inline: 24px;
+  }
+  .fluid-container {
+    margin-left: -24px;
+  }
+  .fixed-container-xl {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .fixed-container-l {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .fixed-container-m {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .fixed-container-sm {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+@media (min-width: 1040px) {
+  body {
+    margin-inline: 24px;
+  }
+  .fluid-container {
+    margin-left: -24px;
+  }
+  .fixed-container-xl {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .fixed-container-l {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .fixed-container-m {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .fixed-container-sm {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+@media (min-width: 1440px) {
+  body {
+    margin-inline: 32px;
+  }
+  .fluid-container {
+    margin-left: -32px;
+  }
+  .fixed-container-xl {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+  .fixed-container-l {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+  .fixed-container-m {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+  .fixed-container-sm {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+.fixed-container-sm.center,
+.fixed-container-m.center,
+.fixed-container-l.center,
+.fixed-container-xl.center {
+  margin-inline: auto;
+}
+.fixed-container-sm.left,
+.fixed-container-m.left,
+.fixed-container-l.left,
+.fixed-container-xl.left {
+  margin-left: 0;
+  margin-right: auto;
+  justify-content: flex-start;
+}
+.fixed-container-sm.right,
+.fixed-container-m.right,
+.fixed-container-l.right,
+.fixed-container-xl.right {
+  margin-left: auto;
+  margin-right: 0;
+  justify-content: flex-end;
+}
+.fixed-container-sm > .field--name-field-custom-block,
+.fixed-container-m > .field--name-field-custom-block,
+.fixed-container-l > .field--name-field-custom-block,
+.fixed-container-xl > .field--name-field-custom-block {
+  width: 100%;
+}
+
+.fluid-container .fixed-container-sm {
+  padding-inline: var(--spacing-sm);
+}
+@media screen and (min-width: 624px) {
+  .fluid-container .fixed-container-sm {
+    padding-inline: 0;
+  }
+}
+.fluid-container .fixed-container-m {
+  padding-inline: var(--spacing-sm);
+}
+@media screen and (min-width: 768px) {
+  .fluid-container .fixed-container-m {
+    padding-inline: var(--spacing-md);
+  }
+}
+@media screen and (min-width: 842px) {
+  .fluid-container .fixed-container-m {
+    padding-inline: 0;
+  }
+}
+.fluid-container .fixed-container-l {
+  padding-inline: var(--spacing-sm);
+}
+@media screen and (min-width: 768px) {
+  .fluid-container .fixed-container-l {
+    padding-inline: var(--spacing-md);
+  }
+}
+@media screen and (min-width: 1054px) {
+  .fluid-container .fixed-container-l {
+    padding-inline: 0;
+  }
+}
+.fluid-container .fixed-container-xl {
+  padding-inline: var(--spacing-sm);
+}
+@media screen and (min-width: 768px) {
+  .fluid-container .fixed-container-xl {
+    padding-inline: var(--spacing-md);
+  }
+}
+@media screen and (min-width: 1264px) {
+  .fluid-container .fixed-container-xl {
+    padding-inline: 0;
+  }
+}
+
+.styleguide-containers {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+:root {
+  --fluid-container: calc(100vw - var(--scrollbar-width));
+  --fixed-container-xl: 1240px;
+  --fixed-container-l: 1030px;
+  --fixed-container-m: 818px;
+  --fixed-container-sm: 608px;
+  --scrollbar-width: 0;
+  --header-block-size: 9.6rem;
+  --header-offset: calc(var(--drupal-displace-offset-top, 0px) + var(--header-block-size) + var(--announcement-banner-height, 0px));
+}
+
+:root {
+  --breakpoint-xs: 0px;
+  --breakpoint-xs-margin: 16px;
+  --breakpoint-sm: 480px;
+  --breakpoint-sm-margin: 16px;
+  --breakpoint-md: 768px;
+  --breakpoint-md-margin: 24px;
+  --breakpoint-lg: 1040px;
+  --breakpoint-lg-margin: 24px;
+  --breakpoint-xl: 1440px;
+  --breakpoint-xl-margin: 32px;
+}
+
 /*------------------------------------*\
     #Font sizes
 \*------------------------------------*/
@@ -506,4 +777,10 @@ body.frontpage .field-landing-intro-container {
 .paragraph-basic-cta {
   display: flex;
   gap: 5rem;
+  justify-content: flex-start;
+}
+@media screen and (min-width: 1040px) {
+  .paragraph-basic-cta {
+    flex-direction: row;
+  }
 }
