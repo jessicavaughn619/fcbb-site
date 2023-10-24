@@ -492,9 +492,16 @@ figure > p {
   background: rgba(0, 94, 184, 0.5);
   z-index: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.node-landing-page.full .field-landing-intro {
-  text-align: center;
+
+.paragraph--education {
+  display: block;
+}
+
+.paragraph-basic-cta {
+  display: flex;
+  gap: 2rem;
 }
