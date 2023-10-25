@@ -1,5 +1,5 @@
 $containers: (
-  fluid-container: calc(100vw - var(--scrollbar-width)),
+  fluid-container: 100vw,
   fixed-container-xl: 1240px,
   fixed-container-l: 1030px,
   fixed-container-m: 818px,
@@ -31,9 +31,9 @@ $containers: (
   $margin: map-get($config, margin);
 
   @media (min-width: $size) {
-    // body {
-    //   margin-inline: $margin;
-    // }
+    body {
+      margin-inline: $margin;
+    }
     
     @each $container, $maxWidth in $containers {
       @if $container != fluid-container {

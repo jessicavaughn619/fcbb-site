@@ -52,10 +52,10 @@
   #}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    <div class="fixed-container-xl center">
+    {# <div class="fixed-container-xl center"> #}
       {% block content %}
         {{ content }}
       {% endblock %}
-    </div>
+    {# </div> #}
   </div>
 {% endblock paragraph %}

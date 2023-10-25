@@ -3,7 +3,8 @@
     flex-direction: row;
     justify-content: space-between;
     color: $text-white;
-    padding: 2rem;
+    padding-inline: 2rem;
+    padding-block: 4rem;
     align-items: center;
     background: linear-gradient(to top, $primary-background, $primary-blue);
 

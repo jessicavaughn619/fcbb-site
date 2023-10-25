@@ -18,6 +18,7 @@
         "composer/installers": "^2.0",
         "drupal/address": "^1.12",
         "drupal/admin_toolbar": "^3.4",
+        "drupal/block_field": "^1.0@RC",
         "drupal/browsersync": "^3.0@beta",
         "drupal/core-composer-scaffold": "^10.1",
         "drupal/core-project-message": "^10.1",

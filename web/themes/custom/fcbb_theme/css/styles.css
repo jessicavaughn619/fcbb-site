@@ -188,7 +188,7 @@
     #Breakpoints
 \*------------------------------------*/
 .fluid-container {
-  width: calc(100vw - var(--scrollbar-width));
+  width: 100vw;
 }
 
 .fixed-container-xl {
@@ -232,6 +232,9 @@
 }
 
 @media (min-width: 0px) {
+  body {
+    margin-inline: 16px;
+  }
   .fluid-container {
     margin-left: -16px;
   }
@@ -253,6 +256,9 @@
   }
 }
 @media (min-width: 480px) {
+  body {
+    margin-inline: 16px;
+  }
   .fluid-container {
     margin-left: -16px;
   }
@@ -274,6 +280,9 @@
   }
 }
 @media (min-width: 768px) {
+  body {
+    margin-inline: 24px;
+  }
   .fluid-container {
     margin-left: -24px;
   }
@@ -295,6 +304,9 @@
   }
 }
 @media (min-width: 1040px) {
+  body {
+    margin-inline: 24px;
+  }
   .fluid-container {
     margin-left: -24px;
   }
@@ -316,6 +328,9 @@
   }
 }
 @media (min-width: 1440px) {
+  body {
+    margin-inline: 32px;
+  }
   .fluid-container {
     margin-left: -32px;
   }
@@ -420,7 +435,7 @@
 }
 
 :root {
-  --fluid-container: calc(100vw - var(--scrollbar-width));
+  --fluid-container: 100vw;
   --fixed-container-xl: 1240px;
   --fixed-container-l: 1030px;
   --fixed-container-m: 818px;
@@ -665,6 +680,7 @@ body {
   font-weight: normal;
   line-height: 1.6;
   color: #fafafa;
+  background: #000;
 }
 
 p {
@@ -699,8 +715,11 @@ figure > p {
   display: block;
   text-align: center;
   color: #fafafa;
-  padding: 2rem;
+  padding-block: 8rem;
   background: linear-gradient(to bottom, #000, #005eb8);
+}
+#footer #copyright {
+  margin: 0;
 }
 
 #header {
@@ -708,7 +727,8 @@ figure > p {
   flex-direction: row;
   justify-content: space-between;
   color: #fafafa;
-  padding: 2rem;
+  padding-inline: 2rem;
+  padding-block: 4rem;
   align-items: center;
   background: linear-gradient(to top, #000, #005eb8);
 }
@@ -770,6 +790,10 @@ body.frontpage .field-landing-intro-container p {
   margin: 0;
   gap: 1rem;
 }
+.node-event.full h1 {
+  text-align: center;
+  padding-block: 3rem;
+}
 .node-event.full .event-header {
   display: flex;
   flex-direction: column;
@@ -778,7 +802,7 @@ body.frontpage .field-landing-intro-container p {
   align-items: center;
   gap: 3rem;
 }
-@media screen and (min-width: 1040px) {
+@media screen and (min-width: 768px) {
   .node-event.full .event-header {
     flex-direction: row;
     gap: 5rem;
@@ -793,6 +817,13 @@ body.frontpage .field-landing-intro-container p {
 .node-event.full .field--name-field-event-details {
   color: #fafafa;
   padding-inline: 3rem;
+}
+
+.node--event--teaser .node__content {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  width: 100%;
 }
 
 .paragraph--education {
