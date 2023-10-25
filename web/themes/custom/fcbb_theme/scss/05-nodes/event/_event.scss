@@ -1,3 +1,29 @@
 .node-event.full {
     background-color: $primary-background; 
+    margin: 0;
+    gap: 1rem;
+    
+    .event-header {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 3rem;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+
+        @media #{$breakpoint-lg} {
+            flex-direction: row;
+            gap: 5rem;
+        }
+    }
+    .event-dates-location {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .field--name-field-event-details {
+        color: $text-white;
+        padding-inline: 3rem;
+    }
 }

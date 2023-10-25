@@ -767,6 +767,32 @@ body.frontpage .field-landing-intro-container p {
 
 .node-event.full {
   background-color: #000;
+  margin: 0;
+  gap: 1rem;
+}
+.node-event.full .event-header {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 3rem;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+@media screen and (min-width: 1040px) {
+  .node-event.full .event-header {
+    flex-direction: row;
+    gap: 5rem;
+  }
+}
+.node-event.full .event-dates-location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+.node-event.full .field--name-field-event-details {
+  color: #fafafa;
+  padding-inline: 3rem;
 }
 
 .paragraph--education {
