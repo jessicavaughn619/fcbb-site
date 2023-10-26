@@ -711,6 +711,13 @@ figure > p {
   gap: 2rem;
 }
 
+a {
+  text-decoration: none;
+}
+a :hover {
+  color: #005eb8;
+}
+
 #footer {
   display: block;
   text-align: center;
@@ -789,18 +796,13 @@ body.frontpage .field-landing-intro-container p {
   background-color: #000;
   margin: 0;
   gap: 1rem;
-}
-.node-event.full h1 {
-  text-align: center;
-  padding-block: 3rem;
+  padding-top: 3rem;
 }
 .node-event.full .event-header {
   display: flex;
   flex-direction: column;
-  padding-inline: 3rem;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 3rem;
 }
 @media screen and (min-width: 768px) {
   .node-event.full .event-header {
@@ -812,18 +814,40 @@ body.frontpage .field-landing-intro-container p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2rem;
+}
+.node-event.full .event-dates-location .field--name-field-event-dates .field__item {
+  font-style: italic;
+  padding-bottom: 1.5rem;
+}
+.node-event.full .event-dates-location .address .organization {
+  color: #005eb8;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .node-event.full .field--name-field-event-details {
   color: #fafafa;
-  padding-inline: 3rem;
 }
 
+.node--event--teaser {
+  align-items: flex-start;
+  border-bottom: 1px solid white;
+  padding-top: 3rem;
+}
 .node--event--teaser .node__content {
   display: flex;
   flex-direction: row;
-  gap: 5rem;
+  justify-content: space-between;
   width: 100%;
+  align-items: center;
+}
+.node--event--teaser .node__content .field--name-field-event-dates .field__item {
+  font-style: italic;
+  padding-bottom: 1.5rem;
+}
+.node--event--teaser .node__content .address .organization {
+  color: #005eb8;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .paragraph--education {

@@ -1,9 +1,24 @@
 .node--event--teaser {
+    align-items: flex-start;
+    border-bottom: 1px solid white;
+    padding-top: 3rem;
     
     .node__content {
         display: flex;
         flex-direction: row;
-        gap: 5rem;
+        justify-content: space-between;
         width: 100%;
+        align-items: center;
+
+        .field--name-field-event-dates .field__item {
+            font-style: italic;
+            padding-bottom: 1.5rem;
+        }
+
+        .address .organization {
+            color: $primary-blue;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
     }
 }

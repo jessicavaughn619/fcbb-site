@@ -10,18 +10,21 @@
 %}
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
-    <h1>{{ label }}</h1>
+    {# <h2>{{ label }}</h2> #}
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('node__content') }}>
-    <div class='event-header'>
-    {{ content.field_event_image }}
+    <div class='event-header fixed-container-m'>
     <div class='event-dates-location'>
     {{ content.field_event_dates }}
+    <h2>{{ label }}</h2>
     {{ content.field_event_location }}
     </div>
+    {{ content.field_event_image }}
     </div>
+    <div class='fixed-container-m'>
     {{ content.field_event_details }}
+    </div>
   </div>
 
 </article>

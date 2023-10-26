@@ -9,18 +9,24 @@
     'center',
   ]
 %}
+
+{%
+  set nid = node.id
+%}
+
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
-    <h3>{{ label }}</h3>
+    {# <h3>{{ label }}</h3> #}
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content.field_event_image }}
     <div class='event-teaser-details'>
     {{ content.field_event_dates }}
+    <a href="{{ drupal_url('node/' ~ nid) }}"><h3>{{ label }}</h3></a>
     {{ content.field_event_location }}
-    {{ content.field_event_details }}
+    {# {{ content.field_event_details }} #}
     </div>
+        {{ content.field_event_image }}
   </div>
 
 </article>
