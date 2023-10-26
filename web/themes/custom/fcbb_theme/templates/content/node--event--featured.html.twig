@@ -1,0 +1,34 @@
+{%
+  set classes = [
+    'node--' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class : 'node--' ~ node.bundle|clean_class,
+    'fixed-container-xl',
+    'center',
+  ]
+
+%}
+
+{%
+  set nid = node.id
+%}
+
+<article{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+    {# <h2>{{ label }}</h2> #}
+  {{ title_suffix }}
+<div class='featured-event-node-content-wrapper'>
+  <div{{ content_attributes.addClass('node__content') }}>
+    <div class='featured-event-dates-title'>
+    {{ content.field_event_dates }}
+    <a href="{{ drupal_url('node/' ~ nid) }}"><h3>{{ label }}</h3></a>
+    {# {{ content.field_event_location }} #}
+    {# {{ content.field_event_details }} #}
+    </div>
+    {{ content.field_event_image }}
+  </div>
+  </div>
+
+</article>

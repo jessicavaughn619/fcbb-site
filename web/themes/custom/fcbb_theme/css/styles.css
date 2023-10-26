@@ -850,6 +850,19 @@ body.frontpage .field-landing-intro-container p {
   font-weight: bold;
 }
 
+.node--event--featured .featured-event-node-content-wrapper {
+  display: flex;
+  height: 40rem;
+  width: 35rem;
+  border: 1px solid white;
+}
+.node--event--featured .featured-event-node-content-wrapper .node__content {
+  padding: 3rem 2rem;
+}
+.node--event--featured .field--name-field-event-dates {
+  font-style: italic;
+}
+
 .paragraph--education {
   display: block;
 }
@@ -863,4 +876,11 @@ body.frontpage .field-landing-intro-container p {
   .paragraph-basic-cta {
     flex-direction: row;
   }
+}
+
+#block-featuredevents .view-content {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  gap: 5rem;
 }

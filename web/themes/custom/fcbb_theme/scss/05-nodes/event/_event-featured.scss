@@ -1,0 +1,17 @@
+.node--event--featured {
+    .featured-event-node-content-wrapper {
+        display: flex;
+        height: 40rem;
+        width: 35rem;
+        border: 1px solid white;
+
+        .node__content {
+            padding: 3rem 2rem;
+        }
+
+    }
+
+    .field--name-field-event-dates {
+        font-style: italic;
+    }
+}
