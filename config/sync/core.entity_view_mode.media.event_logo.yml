@@ -1,0 +1,10 @@
+uuid: c31c560f-222a-4320-b2fa-c703897b0fc9
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.event_logo
+label: 'Event Logo'
+targetEntityType: media
+cache: true

@@ -1,0 +1,24 @@
+uuid: 40a51479-c318-4712-a2cc-1d52b123aa66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_custom_block
+    - paragraphs.paragraphs_type.custom_block
+  module:
+    - block_field
+id: paragraph.custom_block.field_custom_block
+field_name: field_custom_block
+entity_type: paragraph
+bundle: custom_block
+label: 'Custom Block'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: blocks
+  selection_settings:
+    plugin_ids: {  }
+field_type: block_field

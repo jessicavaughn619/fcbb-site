@@ -1,0 +1,31 @@
+uuid: e33706aa-a68b-4cd6-b5f3-828aa3f92f2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.view_block
+    - field.field.block_content.view_block.body
+    - field.field.block_content.view_block.field_view
+  module:
+    - block_field
+    - text
+id: block_content.view_block.default
+targetEntityType: block_content
+bundle: view_block
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_view:
+    type: block_field
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

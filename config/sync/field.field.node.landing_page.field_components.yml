@@ -23,6 +23,12 @@ settings:
     target_bundles: null
     negate: 0
     target_bundles_drag_drop:
+      basic_cta:
+        weight: 5
+        enabled: false
+      custom_block:
+        weight: 6
+        enabled: false
       education:
         weight: 3
         enabled: false

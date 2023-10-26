@@ -1,9 +1,9 @@
-uuid: 7aa9b16f-d3dc-408d-b8a5-71b0e9d443ce
+uuid: 2533b94a-941e-4f42-b8d0-2df2a1ab840f
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.featured
     - field.field.node.event.body
     - field.field.node.event.field_event_dates
     - field.field.node.event.field_event_details
@@ -15,17 +15,17 @@ dependencies:
     - datetime
     - text
     - user
-id: node.event.teaser
+id: node.event.featured
 targetEntityType: node
 bundle: event
-mode: teaser
+mode: featured
 content:
   field_event_dates:
     type: datetime_custom
     label: hidden
     settings:
       timezone_override: ''
-      date_format: 'F j, Y'
+      date_format: 'F j'
     third_party_settings: {  }
     weight: 1
     region: content

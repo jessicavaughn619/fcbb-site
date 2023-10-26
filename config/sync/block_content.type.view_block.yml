@@ -1,0 +1,8 @@
+uuid: 81bb4575-74d3-472d-bdf9-8d42f0af81fc
+langcode: en
+status: true
+dependencies: {  }
+id: view_block
+label: 'View Block'
+revision: 0
+description: 'Display a view with a heading'

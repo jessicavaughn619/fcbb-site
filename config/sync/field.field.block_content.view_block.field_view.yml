@@ -1,0 +1,30 @@
+uuid: a58cd222-9ba2-4a53-b5ff-3e18e5c78330
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.view_block
+    - field.storage.block_content.field_view
+  module:
+    - block_field
+id: block_content.view_block.field_view
+field_name: field_view
+entity_type: block_content
+bundle: view_block
+label: View
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: blocks
+  selection_settings:
+    plugin_ids:
+      'views_block:featured_event-block_1': 'views_block:featured_event-block_1'
+      'views_block:comments_recent-block_1': 'views_block:comments_recent-block_1'
+      'views_block:content_recent-block_1': 'views_block:content_recent-block_1'
+      'views_block:upcoming_events-block_1': 'views_block:upcoming_events-block_1'
+      'views_block:who_s_online-who_s_online_block': 'views_block:who_s_online-who_s_online_block'
+      'views_block:who_s_new-block_1': 'views_block:who_s_new-block_1'
+field_type: block_field
