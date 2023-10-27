@@ -14,6 +14,9 @@
   set nid = node.id
 %}
 
+{% set eventDates = node.field_event_dates %}
+{% set numberOfEventDates = eventDates|length %}
+
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
     {# <h3>{{ label }}</h3> #}
@@ -21,7 +24,25 @@
 
   <div{{ content_attributes.addClass('node__content') }}>
     <div class='event-teaser-details'>
-    {{ content.field_event_dates }}
+
+
+    {% if numberOfEventDates > 1 %}
+        {# There are multiple items in the field for this specific event instance #}
+        {% set uniqueDateStrings = [] %}
+        {% for date in eventDates %}
+            {% set dateTime = date.value|date('Y-m-d\\TH:i:s')|date_modify('+0 seconds') %}
+            {% set formattedDate = dateTime|date('F j') %}
+            {% if formattedDate not in uniqueDateStrings %}
+              {% set uniqueDateStrings = uniqueDateStrings|merge([formattedDate]) %}
+            {% endif %}
+        {% endfor %}
+        {% set dateRange = uniqueDateStrings|join(' - ') %}
+        {{ dateRange }}
+    {% else %}
+        {# There is only one item or none in the field for this specific event instance #}
+        {{ content.field_event_dates }}
+    {% endif %}
+
     <a href="{{ drupal_url('node/' ~ nid) }}"><h3>{{ label }}</h3></a>
     {{ content.field_event_location }}
     {# {{ content.field_event_details }} #}
