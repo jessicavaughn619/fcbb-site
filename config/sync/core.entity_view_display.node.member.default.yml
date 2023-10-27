@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.member.field_director_headshot
     - field.field.node.member.field_director_position_title
     - field.field.node.member.field_member_education
+    - field.field.node.member.field_member_featured
     - field.field.node.member.field_member_first_name
     - field.field.node.member.field_member_last_name
     - field.field.node.member.field_member_location
@@ -71,6 +72,16 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 120
+    region: content
+  field_member_featured:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 121
     region: content
   field_member_first_name:
     type: string

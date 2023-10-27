@@ -1,0 +1,23 @@
+uuid: d346ffdb-b06c-422b-a21d-7ebbd7349219
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_member_featured
+    - node.type.member
+id: node.member.field_member_featured
+field_name: field_member_featured
+entity_type: node
+bundle: member
+label: Featured
+description: 'If checked, member will be featured in Featured Member component.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

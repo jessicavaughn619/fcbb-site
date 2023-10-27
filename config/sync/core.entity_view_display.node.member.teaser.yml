@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.member.field_director_headshot
     - field.field.node.member.field_director_position_title
     - field.field.node.member.field_member_education
+    - field.field.node.member.field_member_featured
     - field.field.node.member.field_member_first_name
     - field.field.node.member.field_member_last_name
     - field.field.node.member.field_member_location
@@ -38,6 +39,7 @@ hidden:
   field_director_headshot: true
   field_director_position_title: true
   field_member_education: true
+  field_member_featured: true
   field_member_first_name: true
   field_member_last_name: true
   field_member_location: true

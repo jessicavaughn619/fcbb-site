@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_event_dates
     - field.field.node.event.field_event_details
+    - field.field.node.event.field_event_featured
     - field.field.node.event.field_event_image
     - field.field.node.event.field_event_location
     - node.type.event
@@ -25,7 +26,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      date_format: 'F j, Y'
+      date_format: 'F j'
     third_party_settings: {  }
     weight: 1
     region: content
@@ -54,4 +55,5 @@ content:
     region: content
 hidden:
   body: true
+  field_event_featured: true
   links: true

@@ -21,10 +21,22 @@ settings:
   selection: blocks
   selection_settings:
     plugin_ids:
-      'views_block:featured_event-block_1': 'views_block:featured_event-block_1'
+      announcement_banner: announcement_banner
+      footer_block: footer_block
+      header_block: header_block
+      'views_block:events-block_2': 'views_block:events-block_2'
+      'views_block:events-block_1': 'views_block:events-block_1'
+      'views_block:members-block_7': 'views_block:members-block_7'
+      'views_block:members-block_2': 'views_block:members-block_2'
+      'views_block:members-block_3': 'views_block:members-block_3'
+      'views_block:members-block_10': 'views_block:members-block_10'
+      'views_block:members-block_5': 'views_block:members-block_5'
+      'views_block:members-block_9': 'views_block:members-block_9'
+      'views_block:members-block_4': 'views_block:members-block_4'
+      'views_block:members-block_8': 'views_block:members-block_8'
+      'views_block:members-block_1': 'views_block:members-block_1'
+      'views_block:members-block_6': 'views_block:members-block_6'
       'views_block:comments_recent-block_1': 'views_block:comments_recent-block_1'
       'views_block:content_recent-block_1': 'views_block:content_recent-block_1'
-      'views_block:upcoming_events-block_1': 'views_block:upcoming_events-block_1'
       'views_block:who_s_online-who_s_online_block': 'views_block:who_s_online-who_s_online_block'
-      'views_block:who_s_new-block_1': 'views_block:who_s_new-block_1'
 field_type: block_field

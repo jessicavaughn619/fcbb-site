@@ -1,0 +1,51 @@
+uuid: b138e9c9-5b5d-49d6-b8b2-4c4bb5ebd741
+langcode: en
+status: true
+dependencies: {  }
+id: member_swiper
+label: 'Member Swiper'
+description: ''
+swiper_options:
+  autoplay:
+    enabled: false
+    delay: 4000
+    disableOnInteraction: true
+    pauseOnMouseEnter: false
+    reverseDirection: false
+    stopOnLastSlide: false
+    waitForTransition: true
+  navigation:
+    enabled: true
+    hideOnClick: false
+  pagination:
+    enabled: false
+    type: bullets
+    dynamicBullets: false
+    clickable: false
+  lazy:
+    enabled: false
+    checkInView: false
+    loadOnTransitionStart: false
+    loadPrevNext: false
+    loadPrevNextAmount: 1
+    scrollingElement: window
+  label: 'Member Swiper'
+  id: member_swiper
+  description: null
+  enabled: true
+  source: remote
+  autoHeight: true
+  width: null
+  height: null
+  observer: false
+  direction: horizontal
+  effect: slide
+  loop: false
+  rewind: false
+  centeredSlides: false
+  speed: 300
+  slidesPerView: 3
+  loopedSlides: 1
+  noSwipingSelector: '.no-swipe, button, input'
+  grabCursor: false
+  cssMode: false
