@@ -1,0 +1,34 @@
+{%
+  set classes = [
+    'node--' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class : 'node--' ~ node.bundle|clean_class,
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+    {# <h1>{{ label }}</h1> #}
+  {{ title_suffix }}
+
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content.field_member_performer_headshot }}
+    {{ label }}
+    {{ content.field_performer_position_title }}
+    {{ content.field_member_location }}
+    {{ content.field_performer_bio }}
+    {{ content.field_additional_ensembles }}
+    {{ content.field_teaching_positions }}
+    <div class='year-joined'>
+      {% if content.field_member_year_joined.0["#markup"] == "2002" %}
+      <p class='founding-member'>Founding member</p>
+      {% else %}
+      {% set member_since_text = 'Member since ' ~ content.field_member_year_joined.0["#markup"] %}
+      {{ member_since_text }}
+      {% endif %}
+    </div>
+    {{ content.field_member_education }}
+  </div>
+
+</article>

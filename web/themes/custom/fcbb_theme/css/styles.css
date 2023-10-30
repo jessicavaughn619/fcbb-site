@@ -793,7 +793,6 @@ body.frontpage .field-landing-intro-container p {
 }
 
 .node-event.full {
-  background-color: #000;
   margin: 0;
   gap: 1rem;
   padding-top: 3rem;
@@ -861,6 +860,25 @@ body.frontpage .field-landing-intro-container p {
 }
 .node--event--featured .field--name-field-event-dates {
   font-style: italic;
+}
+
+.node-member.full .year-joined {
+  text-transform: uppercase;
+}
+.node-member.full .year-joined .founding-member {
+  color: #005eb8;
+}
+
+.node--member--teaser .year-joined {
+  text-transform: uppercase;
+}
+.node--member--teaser .year-joined .founding-member {
+  color: #005eb8;
+}
+
+.node--member--director-teaser .node__content {
+  display: flex;
+  flex-direction: row;
 }
 
 .paragraph--education {
