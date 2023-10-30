@@ -34,7 +34,7 @@ mode: default
 content:
   field_additional_ensembles:
     type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -51,7 +51,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: member
       link: false
     third_party_settings: {  }
     weight: 115
@@ -110,7 +110,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: member
       link: false
     third_party_settings: {  }
     weight: 106
@@ -153,7 +153,7 @@ content:
     region: content
   field_teaching_positions:
     type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }

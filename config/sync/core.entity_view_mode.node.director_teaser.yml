@@ -1,0 +1,10 @@
+uuid: e34b3ad6-ee44-4be0-8e00-c14c7747684f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.director_teaser
+label: 'Director Teaser'
+targetEntityType: node
+cache: true

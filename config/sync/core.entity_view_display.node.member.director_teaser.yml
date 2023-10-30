@@ -1,9 +1,9 @@
-uuid: 1dc49368-f977-4502-af4a-61632f692c7b
+uuid: cd13b02c-aa7d-41a1-8649-b7e8ced483d0
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.director_teaser
     - field.field.node.member.field_additional_ensembles
     - field.field.node.member.field_director_bio
     - field.field.node.member.field_director_headshot
@@ -22,14 +22,32 @@ dependencies:
     - field.field.node.member.field_teaching_positions
     - node.type.member
   module:
+    - address
+    - entity_reference_revisions
     - options
+    - text
     - user
     - yearonly
-id: node.member.teaser
+id: node.member.director_teaser
 targetEntityType: node
 bundle: member
-mode: teaser
+mode: director_teaser
 content:
+  field_additional_ensembles:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_director_bio:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 117
+    region: content
   field_director_headshot:
     type: entity_reference_entity_view
     label: hidden
@@ -37,7 +55,7 @@ content:
       view_mode: member
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 115
     region: content
   field_director_position_title:
     type: string
@@ -45,7 +63,26 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 7
+    weight: 116
+    region: content
+  field_member_education:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_member_featured:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 121
     region: content
   field_member_first_name:
     type: string
@@ -53,7 +90,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 104
     region: content
   field_member_last_name:
     type: string
@@ -61,7 +98,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 105
+    region: content
+  field_member_location:
+    type: address_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
     region: content
   field_member_performer_headshot:
     type: entity_reference_entity_view
@@ -70,28 +114,35 @@ content:
       view_mode: member
       link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 106
     region: content
   field_member_role:
     type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 108
     region: content
   field_member_section:
     type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 109
     region: content
   field_member_year_joined:
     type: yearonly_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 8
+    weight: 119
+    region: content
+  field_performer_bio:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 112
     region: content
   field_performer_position_title:
     type: string
@@ -99,18 +150,19 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 107
+    region: content
+  field_teaching_positions:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 114
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 100
     region: content
-hidden:
-  field_additional_ensembles: true
-  field_director_bio: true
-  field_member_education: true
-  field_member_featured: true
-  field_member_location: true
-  field_performer_bio: true
-  field_teaching_positions: true
+hidden: {  }
