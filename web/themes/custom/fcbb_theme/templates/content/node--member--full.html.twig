@@ -5,6 +5,8 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class : 'node--' ~ node.bundle|clean_class,
+    'fixed-container-xl',
+    'center',
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
@@ -13,14 +15,11 @@
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content.field_member_performer_headshot }}
-    {{ label }}
+    <div class='header-info'>{{ content.field_member_performer_headshot }}
+      <div><h3>{{ label }}</h3>
     {{ content.field_performer_position_title }}
     {{ content.field_member_location }}
-    {{ content.field_performer_bio }}
-    {{ content.field_additional_ensembles }}
-    {{ content.field_teaching_positions }}
-    <div class='year-joined'>
+      <div class='year-joined'>
       {% if content.field_member_year_joined.0["#markup"] == "2002" %}
       <p class='founding-member'>Founding member</p>
       {% else %}
@@ -28,6 +27,11 @@
       {{ member_since_text }}
       {% endif %}
     </div>
+      </div>
+    </div>
+    {{ content.field_performer_bio }}
+    {{ content.field_additional_ensembles }}
+    {{ content.field_teaching_positions }}
     {{ content.field_member_education }}
   </div>
 

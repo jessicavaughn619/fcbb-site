@@ -862,11 +862,23 @@ body.frontpage .field-landing-intro-container p {
   font-style: italic;
 }
 
-.node-member.full .year-joined {
+.node-member.full .node__content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.node-member.full .node__content .year-joined {
   text-transform: uppercase;
 }
-.node-member.full .year-joined .founding-member {
+.node-member.full .node__content .year-joined .founding-member {
   color: #005eb8;
+}
+.node-member.full .node__content .header-info {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .node--member--teaser .year-joined {

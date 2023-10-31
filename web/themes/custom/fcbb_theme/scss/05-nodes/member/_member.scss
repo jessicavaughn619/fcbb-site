@@ -1,9 +1,22 @@
 .node-member.full {
-    .year-joined {
-        text-transform: uppercase;
-        .founding-member {
-            color: $primary-blue;
+    .node__content {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        .year-joined {
+            text-transform: uppercase;
+            .founding-member {
+                color: $primary-blue;
+            }
         }
-    }
+        .header-info {
+            display: flex;
+            flex-direction: row;
+            gap: 5rem;
+            justify-content: center;
+            align-items: center;
+        }
+}
     
 }
