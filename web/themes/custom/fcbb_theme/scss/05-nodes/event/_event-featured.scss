@@ -1,17 +1,29 @@
 .node--event--featured {
-    .featured-event-node-content-wrapper {
-        display: flex;
-        height: 40rem;
-        width: 35rem;
-        border: 1px solid white;
+        padding: 1rem;
 
         .node__content {
-            padding: 3rem 2rem;
-        }
+            display: grid;
+            grid-template-rows: .75fr .75fr;
 
-    }
+            .featured-event-content {
+                background-color: $primary-blue-dark;
+                padding: 1rem;
+            }
 
-    .field--name-field-event-dates {
-        font-style: italic;
+            .field--name-field-event-dates {
+                font-style: italic;
+                padding-bottom: 1rem;
+            }
+
+            .field--name-title:hover {
+                text-decoration: underline;
+                color: $text-white;
+            }
+
+            img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
     }
-}
+    }

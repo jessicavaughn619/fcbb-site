@@ -6,6 +6,7 @@
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class : 'node--' ~ node.bundle|clean_class,
     'fixed-container-xl',
+    'center',
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
@@ -14,15 +15,15 @@
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('node__content') }}>
-    <div class='event-header fixed-container-m'>
+    <div class='event-header fixed-container-m center'>
     <div class='event-dates-location'>
-    {{ content.field_event_dates }}
     <h2>{{ label }}</h2>
+        {{ content.field_event_dates }}
     {{ content.field_event_location }}
     </div>
     {{ content.field_event_image }}
     </div>
-    <div class='fixed-container-m'>
+    <div class='fixed-container-m center'>
     {{ content.field_event_details }}
     </div>
   </div>

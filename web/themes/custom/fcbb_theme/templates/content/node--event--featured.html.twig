@@ -5,7 +5,7 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class : 'node--' ~ node.bundle|clean_class,
-    'fixed-container-xl',
+    'fixed-container-sm',
     'center',
   ]
 
@@ -22,12 +22,10 @@
   {{ title_prefix }}
     {# <h2>{{ label }}</h2> #}
   {{ title_suffix }}
-<div class='featured-event-node-content-wrapper'>
   <div{{ content_attributes.addClass('node__content') }}>
-    <div class='featured-event-dates-title'>
-
+    {{ content.field_event_image }}
+    <div class='featured-event-content'>
     {% if numberOfEventDates > 1 %}
-        {# There are multiple items in the field for this specific event instance #}
         {% set uniqueDateStrings = [] %}
         {% for date in eventDates %}
             {% set dateTime = date.value|date('Y-m-d\\TH:i:s')|date_modify('+0 seconds') %}
@@ -43,11 +41,8 @@
         {{ content.field_event_dates }}
     {% endif %}
     <a href="{{ drupal_url('node/' ~ nid) }}"><h3>{{ label }}</h3></a>
-    {# {{ content.field_event_location }} #}
-    {# {{ content.field_event_details }} #}
+    {{ content.field_event_details }}
     </div>
-    {{ content.field_event_image }}
-  </div>
   </div>
 
 </article>

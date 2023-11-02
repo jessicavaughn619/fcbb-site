@@ -7,7 +7,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
 
         @media #{$breakpoint-md} {
             flex-direction: row;
@@ -33,5 +33,9 @@
     }
     .field--name-field-event-details {
         color: $text-white;
+    }
+
+    .image-style-medium {
+        border-radius: 1rem;
     }
 }

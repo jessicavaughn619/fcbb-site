@@ -801,7 +801,7 @@ body.frontpage .field-landing-intro-container p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 @media screen and (min-width: 768px) {
   .node-event.full .event-header {
@@ -826,6 +826,9 @@ body.frontpage .field-landing-intro-container p {
 .node-event.full .field--name-field-event-details {
   color: #fafafa;
 }
+.node-event.full .image-style-medium {
+  border-radius: 1rem;
+}
 
 .node--event--teaser {
   align-items: flex-start;
@@ -848,18 +851,33 @@ body.frontpage .field-landing-intro-container p {
   text-transform: uppercase;
   font-weight: bold;
 }
+.node--event--teaser .node__content .image-style-medium {
+  border-radius: 1rem;
+}
 
-.node--event--featured .featured-event-node-content-wrapper {
-  display: flex;
-  height: 40rem;
-  width: 35rem;
-  border: 1px solid white;
+.node--event--featured {
+  padding: 1rem;
 }
-.node--event--featured .featured-event-node-content-wrapper .node__content {
-  padding: 3rem 2rem;
+.node--event--featured .node__content {
+  display: grid;
+  grid-template-rows: 0.75fr 0.75fr;
 }
-.node--event--featured .field--name-field-event-dates {
+.node--event--featured .node__content .featured-event-content {
+  background-color: #013A6D;
+  padding: 1rem;
+}
+.node--event--featured .node__content .field--name-field-event-dates {
   font-style: italic;
+  padding-bottom: 1rem;
+}
+.node--event--featured .node__content .field--name-title:hover {
+  text-decoration: underline;
+  color: #fafafa;
+}
+.node--event--featured .node__content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .node-member.full .node__content {
@@ -908,9 +926,29 @@ body.frontpage .field-landing-intro-container p {
   }
 }
 
-#block-featuredevents .view-content {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  gap: 5rem;
+#block-featuredevents .view-content .swiper-button-next, #block-featuredevents .view-content .swiper-button-prev {
+  position: relative;
+  margin-top: 0;
+  background-color: #013A6D;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fafafa;
+  border-radius: 10rem;
+  height: 20px;
+  width: 20px;
+  transition: background-color 0.4s ease;
+}
+#block-featuredevents .view-content .swiper-button-next {
+  left: 55%;
+  top: -3rem;
+  padding: 2rem 1.5rem 2rem 2rem;
+}
+#block-featuredevents .view-content .swiper-button-prev {
+  left: 40%;
+  top: 2.7rem;
+  padding: 2rem 2rem 2rem 1.5rem;
+}
+#block-featuredevents .view-content .swiper-button-next:hover, #block-featuredevents .view-content .swiper-button-prev:hover {
+  background-color: #fafafa;
+  color: #013A6D;
 }

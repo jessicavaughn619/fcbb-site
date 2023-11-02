@@ -24,6 +24,7 @@
 
   <div{{ content_attributes.addClass('node__content') }}>
     <div class='event-teaser-details'>
+        <a href="{{ drupal_url('node/' ~ nid) }}"><h3>{{ label }}</h3></a>
 
 
     {% if numberOfEventDates > 1 %}
@@ -43,7 +44,6 @@
         {{ content.field_event_dates }}
     {% endif %}
 
-    <a href="{{ drupal_url('node/' ~ nid) }}"><h3>{{ label }}</h3></a>
     {{ content.field_event_location }}
     {# {{ content.field_event_details }} #}
     </div>
