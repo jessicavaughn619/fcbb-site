@@ -1,0 +1,10 @@
+uuid: 0513a28a-5c0c-48e2-8885-7b60aaea19f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.featured_event
+label: 'Featured Event'
+targetEntityType: media
+cache: true

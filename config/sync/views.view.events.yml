@@ -9,6 +9,7 @@ dependencies:
   module:
     - datetime
     - node
+    - swiper_formatter
     - user
 id: events
 label: Events
@@ -539,8 +540,12 @@ display:
         groups:
           1: AND
       style:
-        type: default
-        options: {  }
+        type: swiper_formatter
+        options:
+          uses_fields: false
+          swiper: null
+          template: event_swiper
+          caption: ''
       row:
         type: 'entity:node'
         options:

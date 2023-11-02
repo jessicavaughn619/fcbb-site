@@ -31,9 +31,10 @@ content:
     weight: 1
     region: content
   field_event_details:
-    type: text_default
+    type: text_summary_or_trimmed
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 400
     third_party_settings: {  }
     weight: 3
     region: content
@@ -41,7 +42,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: event_logo
+      view_mode: featured_event
       link: false
     third_party_settings: {  }
     weight: 0
