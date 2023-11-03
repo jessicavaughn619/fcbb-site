@@ -1,6 +1,11 @@
 .node--member--director-teaser {
+    align-items: flex-start;
+    border-bottom: 1px solid white;
+    padding-block: 3rem;
+
     .node__content {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 2rem;
     }
 }

@@ -17,13 +17,17 @@
         {{ content.field_landing_hero_image }}
         <div class="field-landing-intro-container">
           <h2>{{ content.field_landing_display_title|field_value }}</h2>
+          <div class='intro-body intro'>
           {{ content.field_landing_intro }}
+          </div>
         </div>
     </div>
     {% else %}
     <div class="field-landing-intro-container">
     <h2>{{ content.field_landing_display_title|field_value }}</h2>
-    {{ content.field_landing_intro }}
+      <div class='intro-body intro'>
+      {{ content.field_landing_intro }}
+      </div>
     </div>
     {% endif %}
 

@@ -1,5 +1,27 @@
 .node-landing-page.full {
     background-color: $primary-background;
+
+    .node__content {
+
+        .intro-body {
+            p {
+                font-size: inherit;
+                font-weight: inherit;
+            }
+        }
+        .field-landing-intro-container > h2 {
+            text-align: center;
+        }
+
+        .field--name-body > p {
+            text-align: center;
+        }
+
+        .field--name-field-landing-intro > p {
+            text-align: center;
+        }
+    }
+
 }
 
 body.frontpage {

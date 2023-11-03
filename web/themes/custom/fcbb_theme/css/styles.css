@@ -763,6 +763,19 @@ a :hover {
 .node-landing-page.full {
   background-color: #000;
 }
+.node-landing-page.full .node__content .intro-body p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+.node-landing-page.full .node__content .field-landing-intro-container > h2 {
+  text-align: center;
+}
+.node-landing-page.full .node__content .field--name-body > p {
+  text-align: center;
+}
+.node-landing-page.full .node__content .field--name-field-landing-intro > p {
+  text-align: center;
+}
 
 body.frontpage .wrapper--field-landing-hero-image {
   display: flex;
@@ -906,9 +919,15 @@ body.frontpage .field-landing-intro-container p {
   color: #005eb8;
 }
 
+.node--member--director-teaser {
+  align-items: flex-start;
+  border-bottom: 1px solid white;
+  padding-block: 3rem;
+}
 .node--member--director-teaser .node__content {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
 }
 
 .paragraph--education {
