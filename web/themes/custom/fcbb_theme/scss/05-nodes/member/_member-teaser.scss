@@ -1,11 +1,15 @@
 .node--member--teaser {
+    max-width: 300px;
 
-    max-width: 400px;
-    
+    .member-content {
+        background-color: $primary-blue-dark;
+        padding: 1rem;
+    }
+
     .year-joined {
         text-transform: uppercase;
         .founding-member {
-            color: $primary-blue;
+            margin-bottom: 0;
         }
     }
 }

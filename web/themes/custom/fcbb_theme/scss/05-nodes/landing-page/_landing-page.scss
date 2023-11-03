@@ -1,6 +1,37 @@
 .node-landing-page.full {
     background-color: $primary-background;
 
+    &[data-node-id="23"] .field--name-field-components {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .swiper-button-next, .swiper-button-prev {
+            position: absolute;
+            background-color: $primary-blue-dark;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: $text-white;
+            border-radius: 10rem;
+            height: 20px;
+            width: 20px;
+            transition: background-color .4s ease;
+        }
+
+        .swiper-button-next {
+            padding: 2rem 1.5rem 2rem 2rem;
+        }
+
+        .swiper-button-prev {
+            padding: 2rem 2rem 2rem 1.5rem;
+        }
+
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            background-color: $text-white;
+            color: $primary-blue-dark;
+        }
+    }
+
     .node__content {
 
         .intro-body {

@@ -22,7 +22,11 @@
     <div{{ content_attributes.addClass('node__content') }}>
     <a href="{{ drupal_url('node/' ~ nid) }}">{{ content.field_director_headshot }}</a>
     <div class='director-content'>
-      <h3>{{ label }}</h3>
+      {% if has_doctorate %}
+      <h3>Dr. {{ label}} </h3>
+      {% else %}
+      <h3>{{label}}</h3>
+    {% endif %}
       <h4>{{ content.field_director_position_title }}</h4>
       {{ content.field_director_bio }}
     </div>

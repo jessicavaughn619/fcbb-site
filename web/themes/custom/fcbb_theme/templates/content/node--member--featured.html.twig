@@ -16,7 +16,11 @@
 
   <div{{ content_attributes.addClass('node__content') }}>
     {{ content.field_member_performer_headshot }}
-    {{ label }}
+    {% if has_doctorate %}
+    <h3>Dr. {{ label}} </h3>
+    {% else %}
+    <h3>{{label}}</h3>
+    {% endif %}
     {{ content.field_performer_position_title }}
     {{ content.field_member_location }}
     <div class='year-joined'>

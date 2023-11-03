@@ -79,6 +79,37 @@ function fcbb_theme_preprocess_node(&$variables) {
     $variables['attributes']['class'][] = 'node-' . Html::cleanCssIdentifier($node->bundle());
     $variables['attributes']['class'][] = Html::cleanCssIdentifier($variables['view_mode']);
     $variables['attributes']['data-node-id'] = $node->id();
+    
+    if ($current_node_type == 'member') {
+        $pid = $node->get('field_member_education')->first()->getValue()["target_id"];
+        
+        $paragraph = \Drupal\paragraphs\Entity\Paragraph::load($pid);
+
+        $all_degrees = $paragraph->get('field_education_degrees');
+
+        $degreeLevels = [];
+
+        foreach ($all_degrees as $degree_reference) {
+            $degree_id = $degree_reference->getValue()["target_id"];
+            $degree_item = \Drupal\paragraphs\Entity\Paragraph::load($degree_id);
+
+            if ($degree_item) {
+            // Get the degree level from the degree item.
+            $degree_level = $degree_item->get('field_degree_level')->getValue();
+            if (!empty($degree_level)) {
+                // Assuming field_degree_level is a single value field.
+                $degree_level_value = $degree_level[0]['value'];
+                $degreeLevels[] = $degree_level_value;
+            }
+            }
+        }
+
+        if (in_array("doctorate", $degreeLevels)) {
+            $variables['has_doctorate'] = true;
+        } else {
+            $variables['has_doctorate'] = false;
+        } 
+    }
 }
 
 function fcbb_theme_google_fonts() {
