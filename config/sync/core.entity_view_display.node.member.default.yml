@@ -62,7 +62,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: member_full_headshot
+      view_mode: member_teaser_headshot
       link: false
     third_party_settings: {  }
     weight: 12
@@ -121,7 +121,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: member_full_headshot
+      view_mode: member_teaser_headshot
       link: false
     third_party_settings: {  }
     weight: 3
