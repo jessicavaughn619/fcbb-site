@@ -1,8 +1,9 @@
-uuid: 76296d94-ff01-4f11-8b6b-c5947e240789
+uuid: cc572041-8697-4183-8236-e58e81bf7c05
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.featured
     - field.field.node.member.field_additional_ensembles
     - field.field.node.member.field_director_bio
     - field.field.node.member.field_director_display_order
@@ -29,10 +30,10 @@ dependencies:
     - text
     - user
     - yearonly
-id: node.member.default
+id: node.member.featured
 targetEntityType: node
 bundle: member
-mode: default
+mode: featured
 content:
   field_additional_ensembles:
     type: string

@@ -1,0 +1,23 @@
+uuid: 349f0fbb-d980-464b-8f3d-eea47abf9467
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_performer_section_chair
+    - node.type.member
+id: node.member.field_performer_section_chair
+field_name: field_performer_section_chair
+entity_type: node
+bundle: member
+label: 'Performer Section Chair'
+description: "Enter chair position within section; will determine order displayed.\r\nEx. First chair = 1, second chair = 2, etc."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

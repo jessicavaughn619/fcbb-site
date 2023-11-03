@@ -1,0 +1,17 @@
+uuid: 09238778-73e6-4f24-b4cf-4d978daa5901
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: member_teaser_headshot
+label: 'Member Teaser Headshot'
+effects:
+  d58ed64b-cd20-4f85-b48b-b9f3c141d928:
+    uuid: d58ed64b-cd20-4f85-b48b-b9f3c141d928
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 400
+      crop_type: focal_point

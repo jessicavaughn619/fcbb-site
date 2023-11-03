@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.member.field_additional_ensembles
     - field.field.node.member.field_director_bio
+    - field.field.node.member.field_director_display_order
     - field.field.node.member.field_director_headshot
     - field.field.node.member.field_director_position_title
     - field.field.node.member.field_member_education
@@ -19,6 +20,7 @@ dependencies:
     - field.field.node.member.field_member_year_joined
     - field.field.node.member.field_performer_bio
     - field.field.node.member.field_performer_position_title
+    - field.field.node.member.field_performer_section_chair
     - field.field.node.member.field_teaching_positions
     - node.type.member
   module:
@@ -30,11 +32,20 @@ targetEntityType: node
 bundle: member
 mode: teaser
 content:
+  field_director_display_order:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_director_headshot:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: member
+      view_mode: member_teaser_headshot
       link: false
     third_party_settings: {  }
     weight: 1
@@ -45,7 +56,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_member_first_name:
     type: string
@@ -67,7 +78,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: member
+      view_mode: member_teaser_headshot
       link: false
     third_party_settings: {  }
     weight: 0
@@ -77,21 +88,21 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_member_section:
     type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_member_year_joined:
     type: yearonly_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 8
+    weight: 10
     region: content
   field_performer_position_title:
     type: string
@@ -101,10 +112,19 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
+  field_performer_section_chair:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 11
     region: content
 hidden:
   field_additional_ensembles: true

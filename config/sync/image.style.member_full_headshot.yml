@@ -1,0 +1,17 @@
+uuid: 76f44f1d-0bdf-4b99-8ca3-4c239448fc84
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: member_full_headshot
+label: 'Member Full Headshot'
+effects:
+  6391cdca-b80d-4059-ba97-100331215f41:
+    uuid: 6391cdca-b80d-4059-ba97-100331215f41
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 500
+      height: 666
+      crop_type: focal_point

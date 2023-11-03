@@ -1,0 +1,23 @@
+uuid: 4169333f-d1b6-43c8-a63d-d93e5a02e96a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_director_display_order
+    - node.type.member
+id: node.member.field_director_display_order
+field_name: field_director_display_order
+entity_type: node
+bundle: member
+label: 'Director Display Order'
+description: "Enter number to sort director display by.\r\nEx. First director displayed = 1, second director displayed = 2, etc."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

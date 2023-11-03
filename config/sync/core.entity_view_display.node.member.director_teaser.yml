@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.director_teaser
     - field.field.node.member.field_additional_ensembles
     - field.field.node.member.field_director_bio
+    - field.field.node.member.field_director_display_order
     - field.field.node.member.field_director_headshot
     - field.field.node.member.field_director_position_title
     - field.field.node.member.field_member_education
@@ -19,6 +20,7 @@ dependencies:
     - field.field.node.member.field_member_year_joined
     - field.field.node.member.field_performer_bio
     - field.field.node.member.field_performer_position_title
+    - field.field.node.member.field_performer_section_chair
     - field.field.node.member.field_teaching_positions
     - node.type.member
   module:
@@ -39,23 +41,32 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 113
+    weight: 10
     region: content
   field_director_bio:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 117
+    weight: 15
+    region: content
+  field_director_display_order:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 14
     region: content
   field_director_headshot:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: member
+      view_mode: director
       link: false
     third_party_settings: {  }
-    weight: 115
+    weight: 12
     region: content
   field_director_position_title:
     type: string
@@ -63,7 +74,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 116
+    weight: 13
     region: content
   field_member_education:
     type: entity_reference_revisions_entity_view
@@ -72,7 +83,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 120
+    weight: 17
     region: content
   field_member_featured:
     type: boolean
@@ -82,7 +93,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 121
+    weight: 18
     region: content
   field_member_first_name:
     type: string
@@ -90,7 +101,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 104
+    weight: 1
     region: content
   field_member_last_name:
     type: string
@@ -98,14 +109,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 105
+    weight: 2
     region: content
   field_member_location:
     type: address_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 111
+    weight: 8
     region: content
   field_member_performer_headshot:
     type: entity_reference_entity_view
@@ -114,35 +125,35 @@ content:
       view_mode: member
       link: false
     third_party_settings: {  }
-    weight: 106
+    weight: 3
     region: content
   field_member_role:
     type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 108
+    weight: 6
     region: content
   field_member_section:
     type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 109
+    weight: 7
     region: content
   field_member_year_joined:
     type: yearonly_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 119
+    weight: 16
     region: content
   field_performer_bio:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 112
+    weight: 9
     region: content
   field_performer_position_title:
     type: string
@@ -150,7 +161,16 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 107
+    weight: 4
+    region: content
+  field_performer_section_chair:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_teaching_positions:
     type: string
@@ -158,11 +178,11 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 114
+    weight: 11
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden: {  }

@@ -1,0 +1,10 @@
+uuid: 3f9efb89-d34d-4491-abd3-04a320b83096
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.member_teaser_headshot
+label: 'Member Teaser Headshot'
+targetEntityType: media
+cache: true

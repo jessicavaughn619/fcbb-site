@@ -98,22 +98,19 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
+        field_performer_section_chair_value:
+          id: field_performer_section_chair_value
+          table: node__field_performer_section_chair
+          field: field_performer_section_chair_value
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: created
-          plugin_id: date
-          order: DESC
+          plugin_id: standard
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
-          granularity: second
       arguments: {  }
       filters:
         status:
@@ -280,6 +277,20 @@ display:
     position: 10
     display_options:
       title: Directors
+      sorts:
+        field_director_display_order_value:
+          id: field_director_display_order_value
+          table: node__field_director_display_order
+          field: field_director_display_order_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       filters:
         status:
           id: status
@@ -348,6 +359,7 @@ display:
           1: AND
       defaults:
         title: false
+        sorts: false
         filters: false
         filter_groups: false
       display_description: ''
@@ -1064,6 +1076,7 @@ display:
     position: 9
     display_options:
       title: 'Featured Member'
+      sorts: {  }
       filters:
         status:
           id: status
@@ -1139,6 +1152,7 @@ display:
         title: false
         style: false
         row: false
+        sorts: false
         filters: false
         filter_groups: false
       display_description: ''

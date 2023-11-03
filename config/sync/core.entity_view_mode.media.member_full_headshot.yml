@@ -1,0 +1,10 @@
+uuid: 4ff21868-b079-44a9-9adb-81409f9d6909
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.member_full_headshot
+label: 'Member Full Headshot'
+targetEntityType: media
+cache: true

@@ -1,0 +1,15 @@
+uuid: 247bb482-d9e1-4e9a-b88e-182178295e40
+langcode: en
+status: true
+dependencies: {  }
+name: director
+label: Director
+effects:
+  120bca61-046e-4418-ae07-49da9ea44a3f:
+    uuid: 120bca61-046e-4418-ae07-49da9ea44a3f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 600
+      anchor: center-center

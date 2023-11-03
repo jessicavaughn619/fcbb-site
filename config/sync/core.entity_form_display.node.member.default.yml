@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.member.field_additional_ensembles
     - field.field.node.member.field_director_bio
+    - field.field.node.member.field_director_display_order
     - field.field.node.member.field_director_headshot
     - field.field.node.member.field_director_position_title
     - field.field.node.member.field_member_education
@@ -18,6 +19,7 @@ dependencies:
     - field.field.node.member.field_member_year_joined
     - field.field.node.member.field_performer_bio
     - field.field.node.member.field_performer_position_title
+    - field.field.node.member.field_performer_section_chair
     - field.field.node.member.field_teaching_positions
     - node.type.member
   module:
@@ -33,6 +35,7 @@ third_party_settings:
     group_performer_details:
       children:
         - field_performer_position_title
+        - field_performer_section_chair
         - field_member_performer_headshot
         - field_performer_bio
       label: 'Performer Details'
@@ -50,6 +53,7 @@ third_party_settings:
     group_director_details:
       children:
         - field_director_position_title
+        - field_director_display_order
         - field_director_headshot
         - field_director_bio
       label: 'Director Details'
@@ -71,7 +75,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 16
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -93,9 +97,16 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
+  field_director_display_order:
+    type: number
+    weight: 13
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_director_headshot:
     type: media_library_widget
-    weight: 13
+    weight: 14
     region: content
     settings:
       media_types: {  }
@@ -157,7 +168,7 @@ content:
     third_party_settings: {  }
   field_member_performer_headshot:
     type: media_library_widget
-    weight: 15
+    weight: 16
     region: content
     settings:
       media_types: {  }
@@ -198,6 +209,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_performer_section_chair:
+    type: number
+    weight: 15
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_teaching_positions:
     type: string_textfield
     weight: 10
@@ -208,7 +226,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -221,14 +239,14 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 18
+    weight: 19
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 15
+    weight: 16
     region: content
     settings:
       display_label: true
@@ -243,7 +261,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 17
+    weight: 18
     region: content
     settings:
       match_operator: CONTAINS
