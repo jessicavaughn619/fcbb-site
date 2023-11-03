@@ -718,6 +718,13 @@ a :hover {
   color: #005eb8;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 #footer {
   display: block;
   text-align: center;
@@ -912,6 +919,9 @@ body.frontpage .field-landing-intro-container p {
   align-items: center;
 }
 
+.node--member--teaser {
+  max-width: 400px;
+}
 .node--member--teaser .year-joined {
   text-transform: uppercase;
 }
@@ -923,11 +933,28 @@ body.frontpage .field-landing-intro-container p {
   align-items: flex-start;
   border-bottom: 1px solid white;
   padding-block: 3rem;
+  max-width: 500px;
+}
+@media screen and (min-width: 1440px) {
+  .node--member--director-teaser {
+    max-width: 1240px;
+  }
 }
 .node--member--director-teaser .node__content {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 2rem;
+}
+@media screen and (min-width: 1440px) {
+  .node--member--director-teaser .node__content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+.node--member--director-teaser .node__content .director-content {
+  background-color: #013A6D;
+  padding: 1rem;
+}
+.node--member--director-teaser .node__content .field--name-field-director-position-title {
+  text-transform: uppercase;
 }
 
 .paragraph--education {

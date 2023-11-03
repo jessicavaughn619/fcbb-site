@@ -2,10 +2,30 @@
     align-items: flex-start;
     border-bottom: 1px solid white;
     padding-block: 3rem;
+    max-width: 500px;
+
+    @media #{$breakpoint-xl} {
+        max-width: 1240px;
+    }
+
+
 
     .node__content {
         display: grid;
-        grid-template-columns: 1fr 1.5fr;
-        gap: 2rem;
+
+        @media #{$breakpoint-xl} {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        .director-content {
+            background-color: $primary-blue-dark;
+            padding: 1rem;
+        }
+
+        .field--name-field-director-position-title {
+            text-transform: uppercase;
+
+        }
     }
 }

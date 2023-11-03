@@ -5,6 +5,8 @@
       node.isSticky() ? 'node--sticky',
       not node.isPublished() ? 'node--unpublished',
       view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class : 'node--' ~ node.bundle|clean_class,
+      'fixed-container-xl',
+      'center',
     ]
   %}
 
@@ -18,10 +20,12 @@
     {{ title_suffix }}
   
     <div{{ content_attributes.addClass('node__content') }}>
-    <div><a href="{{ drupal_url('node/' ~ nid) }}">{{ content.field_director_headshot }}</a>
-      {{ label }}
-      {{ content.field_director_position_title }}</div>
+    <a href="{{ drupal_url('node/' ~ nid) }}">{{ content.field_director_headshot }}</a>
+    <div class='director-content'>
+      <h3>{{ label }}</h3>
+      <h4>{{ content.field_director_position_title }}</h4>
       {{ content.field_director_bio }}
+    </div>
     </div>
   
   </article>
