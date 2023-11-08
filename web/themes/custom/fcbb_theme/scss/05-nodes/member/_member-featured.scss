@@ -1,0 +1,48 @@
+.node--member--featured {
+    .node__content {
+        display: grid;
+
+        .image-header {
+            display: grid;
+            grid-template-rows: 1fr;
+
+            @media #{$breakpoint-lg} {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+            }
+        }
+
+        .field--name-field-media-image {
+            align-self: center;
+            max-width: 300px;
+            margin: 0 auto;
+
+            @media #{$breakpoint-lg} {
+                padding-bottom: 2rem;
+            }
+        }
+
+        .year-joined {
+            text-transform: uppercase;
+            
+            .founding-member {
+                color: $primary-blue;
+            }
+        }
+        .header-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-block: 2rem;
+            padding-inline: 1rem;
+        }
+
+        .full-content {
+            display: flex;
+            flex-direction: column;
+            padding-inline: 1rem;
+            gap: 2rem;
+        }
+    }
+}

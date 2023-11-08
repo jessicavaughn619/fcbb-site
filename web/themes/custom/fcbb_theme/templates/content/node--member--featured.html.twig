@@ -15,8 +15,8 @@
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content.field_member_performer_headshot }}
-    {% if has_doctorate %}
+    <div class='image-header'>{{ content.field_member_performer_headshot }}
+    <div class='header-info'>{% if has_doctorate %}
     <h3>Dr. {{ label}} </h3>
     {% else %}
     <h3>{{label}}</h3>
@@ -30,10 +30,12 @@
       {% set member_since_text = 'Member since ' ~ content.field_member_year_joined.0["#markup"] %}
       {{ member_since_text }}
       {% endif %}
+      </div>
     </div>
-    {{ content.field_additional_ensembles }}
+    </div>
+    <div class='full-content'>{{ content.field_additional_ensembles }}
     {{ content.field_teaching_positions }}
-
+</div>
   </div>
 
 </article>
