@@ -1,48 +1,37 @@
 .node--member--featured {
     .node__content {
         display: grid;
+        max-width: 400px;
 
-        .image-header {
-            display: grid;
-            grid-template-rows: 1fr;
-
-            @media #{$breakpoint-lg} {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                align-items: center;
-            }
+        @media #{$breakpoint-lg} {
+            max-width: 100%;
+            grid-template-columns: 1fr auto;
         }
 
-        .field--name-field-media-image {
+        .field--name-field-member-performer-headshot {
             align-self: center;
-            max-width: 300px;
+            max-width: 400px;
             margin: 0 auto;
 
             @media #{$breakpoint-lg} {
-                padding-bottom: 2rem;
+                margin: 0;
+                max-width: 400px;
             }
         }
 
-        .year-joined {
-            text-transform: uppercase;
-            
-            .founding-member {
-                color: $primary-blue;
-            }
-        }
-        .header-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            padding-block: 2rem;
-            padding-inline: 1rem;
-        }
 
         .full-content {
             display: flex;
             flex-direction: column;
+            justify-content: flex-start;
+            padding-block: 1rem;
             padding-inline: 1rem;
-            gap: 2rem;
+            background-color: $primary-blue-dark;
+            gap: 16px;
+
+            .year-joined {
+                text-transform: uppercase;
+            }
         }
     }
 }
