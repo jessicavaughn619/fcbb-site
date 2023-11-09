@@ -9,12 +9,15 @@
     'center',
   ]
 %}
+
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
     {# <h1>{{ label }}</h1> #}
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('node__content') }}>
+  <div class='view-all-links'><a id='view-all-performers' href='/about/performers'>View All Performers</a>
+  <a id='view-all-directors' href='/about/directors'>View All Directors</a></div>
     <div class='image-header'>{{ content.field_member_performer_headshot }}
     <div class='header-info'>
     {% if has_doctorate %}

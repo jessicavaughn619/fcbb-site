@@ -713,6 +713,7 @@ figure > p {
 
 a {
   text-decoration: none;
+  color: #fafafa;
 }
 a :hover {
   color: #005eb8;
@@ -875,6 +876,9 @@ body.frontpage .field-landing-intro-container p {
 .node-event.full .image-style-medium {
   border-radius: 1rem;
 }
+.node-event.full #view-all:hover {
+  color: #005eb8;
+}
 
 .node--event--teaser {
   align-items: flex-start;
@@ -974,6 +978,26 @@ body.frontpage .field-landing-intro-container p {
 }
 .node-member.full .node__content .full-content .field--name-field-school-location p {
   margin: 0 0 16px;
+}
+.node-member.full .node__content .view-all-links {
+  display: grid;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .node-member.full .node__content .view-all-links {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+  }
+}
+.node-member.full .node__content .view-all-links a:hover {
+  color: #005eb8;
+}
+.node-member.full .node__content #view-all-performers, .node-member.full .node__content #view-all-directors {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .node--member--teaser {
