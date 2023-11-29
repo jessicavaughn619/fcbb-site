@@ -1,9 +1,10 @@
 .paragraph-basic-cta {
-    display: flex;
-    gap: 5rem;
-    justify-content: flex-start;
+    display: grid;
+        max-width: 600px;
+        gap: 2rem;
 
-    @media #{$breakpoint-lg} {
-        flex-direction: row;
-    }
+        @media #{$breakpoint-lg} {
+            max-width: 100%;
+            grid-template-columns: 1fr auto;
+        }
 }

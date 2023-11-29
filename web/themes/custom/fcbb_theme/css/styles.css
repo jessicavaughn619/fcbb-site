@@ -1084,13 +1084,14 @@ body.frontpage .field-landing-intro-container p {
 }
 
 .paragraph-basic-cta {
-  display: flex;
-  gap: 5rem;
-  justify-content: flex-start;
+  display: grid;
+  max-width: 600px;
+  gap: 2rem;
 }
 @media screen and (min-width: 1040px) {
   .paragraph-basic-cta {
-    flex-direction: row;
+    max-width: 100%;
+    grid-template-columns: 1fr auto;
   }
 }
 
