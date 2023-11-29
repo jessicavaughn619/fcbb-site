@@ -3,11 +3,14 @@
 
         .node__content {
             display: grid;
-            grid-template-rows: .75fr .75fr;
+            grid-template-columns: 1fr 1fr;
 
             .featured-event-content {
                 background-color: $primary-blue-dark;
                 padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
 
             .field--name-field-event-dates {

@@ -910,11 +910,14 @@ body.frontpage .field-landing-intro-container p {
 }
 .node--event--featured .node__content {
   display: grid;
-  grid-template-rows: 0.75fr 0.75fr;
+  grid-template-columns: 1fr 1fr;
 }
 .node--event--featured .node__content .featured-event-content {
   background-color: #013A6D;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .node--event--featured .node__content .field--name-field-event-dates {
   font-style: italic;
