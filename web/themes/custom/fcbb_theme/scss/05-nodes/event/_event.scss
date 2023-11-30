@@ -1,7 +1,11 @@
 .node-event.full {
     margin: 0;
-    gap: 1rem;
     padding-top: 3rem;
+
+    #view-all {
+        display: block;
+        margin-bottom: 1rem;
+    }
     
     .event-header {
         display: flex;
@@ -30,6 +34,10 @@
             text-transform: uppercase;
             font-weight: bold;
         }
+
+        .field--name-field-event-location > p {
+            margin: 0 0 16px;
+        }
     }
     .field--name-field-event-details {
         color: $text-white;
@@ -37,6 +45,7 @@
 
     .image-style-medium {
         border-radius: 1rem;
+        margin-bottom: 16px;
     }
 
     #view-all:hover {
