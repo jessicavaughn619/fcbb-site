@@ -3,7 +3,8 @@
 
         .node__content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr .5fr;
+            width: 350px;
 
             .featured-event-content {
                 background-color: $primary-blue-dark;
@@ -11,6 +12,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                border-radius: 0 0 10px 10px;
             }
 
             .field--name-field-event-dates {
@@ -26,7 +28,7 @@
             img {
                 display: block;
                 max-width: 100%;
-                height: auto;
+                border-radius: 10px 10px 0 0;
             }
     }
     }

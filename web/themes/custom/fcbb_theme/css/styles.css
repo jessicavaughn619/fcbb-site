@@ -910,7 +910,8 @@ body.frontpage .field-landing-intro-container p {
 }
 .node--event--featured .node__content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr;
+  width: 350px;
 }
 .node--event--featured .node__content .featured-event-content {
   background-color: #013A6D;
@@ -918,6 +919,7 @@ body.frontpage .field-landing-intro-container p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 0 0 10px 10px;
 }
 .node--event--featured .node__content .field--name-field-event-dates {
   font-style: italic;
@@ -930,7 +932,7 @@ body.frontpage .field-landing-intro-container p {
 .node--event--featured .node__content img {
   display: block;
   max-width: 100%;
-  height: auto;
+  border-radius: 10px 10px 0 0;
 }
 
 .node-member.full {
