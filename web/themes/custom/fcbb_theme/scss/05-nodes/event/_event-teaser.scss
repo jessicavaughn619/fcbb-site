@@ -5,10 +5,29 @@
     
     .node__content {
         display: flex;
-        flex-direction: row;
+        flex-direction: column-reverse;
         justify-content: space-between;
         width: 100%;
-        align-items: center;
+        // align-items: center;
+
+        @media #{$breakpoint-sm} {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .field--name-field-event-image {
+            max-width: 350px;
+            margin-bottom: 16px;
+
+            // @media #{$breakpoint-md} {
+            //     flex-direction: row;
+            //     gap: 5rem;
+            // }
+        }
+
+        .event-teaser-details {
+            flex: 1;
+        }
 
         .field--name-field-event-dates .field__item {
             font-style: italic;

@@ -894,10 +894,22 @@ body.frontpage .field-landing-intro-container p {
 }
 .node--event--teaser .node__content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: space-between;
   width: 100%;
-  align-items: center;
+}
+@media screen and (min-width: 480px) {
+  .node--event--teaser .node__content {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.node--event--teaser .node__content .field--name-field-event-image {
+  max-width: 350px;
+  margin-bottom: 16px;
+}
+.node--event--teaser .node__content .event-teaser-details {
+  flex: 1;
 }
 .node--event--teaser .node__content .field--name-field-event-dates .field__item {
   font-style: italic;
