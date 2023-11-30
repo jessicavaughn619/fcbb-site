@@ -1,10 +1,8 @@
 .paragraph-basic-cta {
     display: grid;
-        max-width: 600px;
         gap: 2rem;
 
         @media #{$breakpoint-lg} {
-            max-width: 100%;
             grid-template-columns: 1fr auto;
         }
 }

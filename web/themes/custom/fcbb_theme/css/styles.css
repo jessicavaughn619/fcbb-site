@@ -1085,14 +1085,16 @@ body.frontpage .field-landing-intro-container p {
 
 .paragraph-basic-cta {
   display: grid;
-  max-width: 600px;
   gap: 2rem;
 }
 @media screen and (min-width: 1040px) {
   .paragraph-basic-cta {
-    max-width: 100%;
     grid-template-columns: 1fr auto;
   }
+}
+
+#block-upcomingevents .field--name-field-view {
+  width: 100%;
 }
 
 #block-featuredevents .view-content .swiper-button-next, #block-featuredevents .view-content .swiper-button-prev {
