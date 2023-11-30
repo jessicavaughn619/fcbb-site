@@ -1,10 +1,10 @@
 .node--event--featured {
-        padding: 1rem;
+    width: 350px;
+    padding: 1rem;
 
         .node__content {
             display: grid;
             grid-template-rows: 1fr .5fr;
-            width: 350px;
 
             .featured-event-content {
                 background-color: $primary-blue-dark;

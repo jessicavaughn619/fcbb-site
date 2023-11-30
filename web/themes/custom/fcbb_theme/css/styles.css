@@ -925,12 +925,12 @@ body.frontpage .field-landing-intro-container p {
 }
 
 .node--event--featured {
+  width: 350px;
   padding: 1rem;
 }
 .node--event--featured .node__content {
   display: grid;
   grid-template-rows: 1fr 0.5fr;
-  width: 350px;
 }
 .node--event--featured .node__content .featured-event-content {
   background-color: #013A6D;
@@ -1118,7 +1118,14 @@ body.frontpage .field-landing-intro-container p {
   width: 100%;
 }
 
-#block-featuredevents .view-content .swiper-button-next, #block-featuredevents .view-content .swiper-button-prev {
+#block-featuredevents .view-content .swiper-slide {
+  width: 350px;
+  padding-right: 32px;
+}
+#block-featuredevents .view-content .center-slides {
+  margin: 0 auto;
+}
+#block-featuredevents .swiper-button-next, #block-featuredevents .swiper-button-prev {
   position: relative;
   margin-top: 0;
   background-color: #013A6D;
@@ -1130,17 +1137,17 @@ body.frontpage .field-landing-intro-container p {
   width: 20px;
   transition: background-color 0.4s ease;
 }
-#block-featuredevents .view-content .swiper-button-next {
+#block-featuredevents .swiper-button-next {
   left: 55%;
   top: -3.3rem;
   padding: 2rem 1.5rem 2rem 2rem;
 }
-#block-featuredevents .view-content .swiper-button-prev {
+#block-featuredevents .swiper-button-prev {
   left: 40%;
   top: 2.7rem;
   padding: 2rem 2rem 2rem 1.5rem;
 }
-#block-featuredevents .view-content .swiper-button-next:hover, #block-featuredevents .view-content .swiper-button-prev:hover {
+#block-featuredevents .swiper-button-next:hover, #block-featuredevents .swiper-button-prev:hover {
   background-color: #fafafa;
   color: #013A6D;
 }

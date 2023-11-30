@@ -10,6 +10,13 @@ global-scripts:
   dependencies:
     - core/drupal
     - core/drupalSettings
+swiper:
+  version: VERSION
+  js:
+    /libraries/swiper/swiper-bundle.min.js: { minified: true }
+  css:
+    theme:
+      /libraries/swiper/swiper-bundle.min.css: { minified: true }
 landing-page:
   version: VERSION
   css:
@@ -22,4 +29,10 @@ basic-page:
   css:
     theme:
       css/basic-page.css: {}
+featured-events:
+  version: VERSION
+  js:
+    js/block/featured-events.min.js: { minified: true }
+  dependencies:
+    - fcbb_theme/swiper
   

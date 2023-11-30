@@ -1,33 +1,41 @@
 #block-featuredevents {
     .view-content {
-        .swiper-button-next, .swiper-button-prev {
-            position: relative;
-            margin-top: 0;
-            background-color: $primary-blue-dark;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: $text-white;
-            border-radius: 10rem;
-            height: 20px;
-            width: 20px;
-            transition: background-color .4s ease;
+        .swiper-slide {
+            width: 350px;
+            padding-right: 32px;
         }
+        .center-slides {
+            margin: 0 auto;
+        }
+    }
 
-        .swiper-button-next {
-            left: 55%;
-            top: -3.3rem;
-            padding: 2rem 1.5rem 2rem 2rem;
-        }
+    .swiper-button-next, .swiper-button-prev {
+        position: relative;
+        margin-top: 0;
+        background-color: $primary-blue-dark;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: $text-white;
+        border-radius: 10rem;
+        height: 20px;
+        width: 20px;
+        transition: background-color .4s ease;
+    }
 
-        .swiper-button-prev {
-            left: 40%;
-            top: 2.7rem;
-            padding: 2rem 2rem 2rem 1.5rem;
-        }
+    .swiper-button-next {
+        left: 55%;
+        top: -3.3rem;
+        padding: 2rem 1.5rem 2rem 2rem;
+    }
 
-        .swiper-button-next:hover, .swiper-button-prev:hover {
-            background-color: $text-white;
-            color: $primary-blue-dark;
-        }
+    .swiper-button-prev {
+        left: 40%;
+        top: 2.7rem;
+        padding: 2rem 2rem 2rem 1.5rem;
+    }
+
+    .swiper-button-next:hover, .swiper-button-prev:hover {
+        background-color: $text-white;
+        color: $primary-blue-dark;
     }
 }
