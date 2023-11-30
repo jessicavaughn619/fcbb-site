@@ -3,23 +3,24 @@ document.addEventListener('DOMContentLoaded', () => {
         a11y: true,
         slidesPerView: 'auto',
         centeredSlides: true,
+        initialSlide: 0,
         breakpoints: {
             768: {
-                centeredSlides: false
+                initialSlide: 1,
             }
         },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        on: {
-            lock: function() {
-                document.querySelector('.swiper-wrapper').classList.add('center-slides');
-            },
-            unlock: function() {
-                document.querySelector('.swiper-wrapper').classList.remove('center-slides');
-            },
-        },
+        // on: {
+        //     lock: function() {
+        //         document.querySelector('.view-content.swiper').classList.add('center-slides');
+        //     },
+        //     unlock: function() {
+        //         document.querySelector('.view-content.swiper').classList.remove('center-slides');
+        //     },
+        // },
     });
 })
 
