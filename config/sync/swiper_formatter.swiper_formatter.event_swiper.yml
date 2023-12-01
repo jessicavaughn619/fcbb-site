@@ -34,7 +34,7 @@ swiper_options:
   description: null
   enabled: true
   source: remote
-  autoHeight: true
+  autoHeight: false
   width: null
   height: null
   observer: false

@@ -5,11 +5,11 @@ dependencies: {  }
 name: featured_event
 label: 'Featured Event'
 effects:
-  6b6f9958-62ee-4e02-b674-2acb462ba219:
-    uuid: 6b6f9958-62ee-4e02-b674-2acb462ba219
-    id: image_scale
-    weight: 1
+  8246aced-7465-4dd0-9f14-a3b7876e6714:
+    uuid: 8246aced-7465-4dd0-9f14-a3b7876e6714
+    id: image_scale_and_crop
+    weight: 2
     data:
-      width: 650
-      height: null
-      upscale: true
+      width: 300
+      height: 300
+      anchor: center-center
