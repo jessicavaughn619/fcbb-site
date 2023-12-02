@@ -1,9 +1,14 @@
 .node--member--teaser {
     max-width: 300px;
 
+    .image-style-member-teaser-headshot {
+        border-radius: 10px 10px 0 0;
+    }
+
     .member-content {
         background-color: $primary-blue-dark;
         padding: 1rem;
+        border-radius: 0 0 10px 10px;
     }
 
     .year-joined {

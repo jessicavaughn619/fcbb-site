@@ -17,9 +17,22 @@
             grid-template-rows: 1fr;
         }
 
+        .image-style-director {
+            border-radius: 10px 10px 0 0;
+
+            @media #{$breakpoint-xl} {
+                border-radius: 10px 0 0 10px;
+            }
+        }
+
         .director-content {
             background-color: $primary-blue-dark;
             padding: 1rem;
+            border-radius: 0 0 10px 10px;
+
+            @media #{$breakpoint-xl} {
+                border-radius: 0 10px 10px 0;
+            }
         }
 
         .field--name-field-director-position-title {
