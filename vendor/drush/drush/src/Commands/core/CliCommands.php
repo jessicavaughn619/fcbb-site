@@ -132,12 +132,12 @@ final class CliCommands extends DrushCommands
         $ignored_commands = [
             'help',
             self::PHP,
-            'core:cli',
+            CliCommands::PHP,
             'php',
-            'php:eval',
+            PhpCommands::EVAL,
             'eval',
             'ev',
-            'php:script',
+            PhpCommands::SCRIPT,
             'scr',
         ];
         $php_keywords = $this->getPhpKeywords();
@@ -316,7 +316,7 @@ final class CliCommands extends DrushCommands
                 continue;
             }
             // Make it possible to easily load revisions.
-            eval(sprintf('class %s extends \%s {
+            eval(sprintf('class %s extends %s {
                 public static function loadRevision($id) {
                     $entity_type_repository = \Drupal::service("entity_type.repository");
                     $entity_type_manager = \Drupal::entityTypeManager();
